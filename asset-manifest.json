@@ -1,11 +1,13 @@
 {
   "files": {
     "main.css": "/RTYT/static/css/main.14df37d5.css",
-    "main.js": "/RTYT/static/js/main.305c62ae.js",
+    "main.js": "/RTYT/static/js/main.7ca67bc7.js",
     "static/js/787.84ed59d6.chunk.js": "/RTYT/static/js/787.84ed59d6.chunk.js",
     "static/media/Inter-VariableFont_slnt,wght.ttf": "/RTYT/static/media/Inter-VariableFont_slnt,wght.853e01975d2783d9fa29.ttf",
     "static/media/Montserrat-VariableFont_wght.ttf": "/RTYT/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
-    "static/media/personalPhoto.jpeg": "/RTYT/static/media/personalPhoto.28738f79a53f18f61f28.jpeg",
+    "static/media/PersonalPhotoBackground.jpeg": "/RTYT/static/media/PersonalPhotoBackground.eeb60a27cb8eec2254d2.jpeg",
+    "static/media/classmate.png": "/RTYT/static/media/classmate.fb38a3544ad21c719754.png",
+    "static/media/PersonalPhoto.jpeg": "/RTYT/static/media/PersonalPhoto.28738f79a53f18f61f28.jpeg",
     "static/media/whiteGithub.svg": "/RTYT/static/media/whiteGithub.5388c0884fd7c63923ac65712029b5d2.svg",
     "static/media/whiteLinkedin.svg": "/RTYT/static/media/whiteLinkedin.178296a815821ea0cf8ef380ebdff185.svg",
     "static/media/whiteProject.svg": "/RTYT/static/media/whiteProject.768f6fcc680464caff9b1be37597033a.svg",
@@ -18,11 +20,11 @@
     "static/media/whiteEmail.svg": "/RTYT/static/media/whiteEmail.5ec6fe32d584d49ab715f5f0327c374e.svg",
     "index.html": "/RTYT/index.html",
     "main.14df37d5.css.map": "/RTYT/static/css/main.14df37d5.css.map",
-    "main.305c62ae.js.map": "/RTYT/static/js/main.305c62ae.js.map",
+    "main.7ca67bc7.js.map": "/RTYT/static/js/main.7ca67bc7.js.map",
     "787.84ed59d6.chunk.js.map": "/RTYT/static/js/787.84ed59d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14df37d5.css",
-    "static/js/main.305c62ae.js"
+    "static/js/main.7ca67bc7.js"
   ]
 }
