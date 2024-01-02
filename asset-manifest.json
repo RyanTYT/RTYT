@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.1312c90d.css",
-    "main.js": "/static/js/main.a61f16eb.js",
-    "static/js/787.84ed59d6.chunk.js": "/static/js/787.84ed59d6.chunk.js",
-    "static/media/Inter-VariableFont_slnt,wght.ttf": "/static/media/Inter-VariableFont_slnt,wght.853e01975d2783d9fa29.ttf",
-    "static/media/Montserrat-VariableFont_wght.ttf": "/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
-    "static/media/personalPhoto.jpeg": "/static/media/personalPhoto.28738f79a53f18f61f28.jpeg",
-    "static/media/whiteGithub.svg": "/static/media/whiteGithub.5388c0884fd7c63923ac65712029b5d2.svg",
-    "static/media/whiteLinkedin.svg": "/static/media/whiteLinkedin.178296a815821ea0cf8ef380ebdff185.svg",
-    "static/media/whiteProject.svg": "/static/media/whiteProject.768f6fcc680464caff9b1be37597033a.svg",
-    "static/media/whitePhone.svg": "/static/media/whitePhone.309259c3245e6a8ca49daf2388ace3e5.svg",
-    "static/media/project.svg": "/static/media/project.0a1ca529f4972aeec3873ccc7b10f4b9.svg",
-    "static/media/whiteEdu.svg": "/static/media/whiteEdu.819650b804d8a9711cd253120a465e3d.svg",
-    "static/media/edu.svg": "/static/media/edu.36178190914a5a8a7f393995079e0d1f.svg",
-    "static/media/whiteHome.svg": "/static/media/whiteHome.102af2e60fd765d0fe97e2688da96952.svg",
-    "static/media/home.svg": "/static/media/home.30463d295e74981a54b3f887fcabdfa5.svg",
-    "static/media/whiteEmail.svg": "/static/media/whiteEmail.5ec6fe32d584d49ab715f5f0327c374e.svg",
-    "index.html": "/index.html",
-    "main.1312c90d.css.map": "/static/css/main.1312c90d.css.map",
-    "main.a61f16eb.js.map": "/static/js/main.a61f16eb.js.map",
-    "787.84ed59d6.chunk.js.map": "/static/js/787.84ed59d6.chunk.js.map"
+    "main.css": "/RTYT/static/css/main.14df37d5.css",
+    "main.js": "/RTYT/static/js/main.305c62ae.js",
+    "static/js/787.84ed59d6.chunk.js": "/RTYT/static/js/787.84ed59d6.chunk.js",
+    "static/media/Inter-VariableFont_slnt,wght.ttf": "/RTYT/static/media/Inter-VariableFont_slnt,wght.853e01975d2783d9fa29.ttf",
+    "static/media/Montserrat-VariableFont_wght.ttf": "/RTYT/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
+    "static/media/personalPhoto.jpeg": "/RTYT/static/media/personalPhoto.28738f79a53f18f61f28.jpeg",
+    "static/media/whiteGithub.svg": "/RTYT/static/media/whiteGithub.5388c0884fd7c63923ac65712029b5d2.svg",
+    "static/media/whiteLinkedin.svg": "/RTYT/static/media/whiteLinkedin.178296a815821ea0cf8ef380ebdff185.svg",
+    "static/media/whiteProject.svg": "/RTYT/static/media/whiteProject.768f6fcc680464caff9b1be37597033a.svg",
+    "static/media/whitePhone.svg": "/RTYT/static/media/whitePhone.309259c3245e6a8ca49daf2388ace3e5.svg",
+    "static/media/project.svg": "/RTYT/static/media/project.0a1ca529f4972aeec3873ccc7b10f4b9.svg",
+    "static/media/whiteEdu.svg": "/RTYT/static/media/whiteEdu.819650b804d8a9711cd253120a465e3d.svg",
+    "static/media/edu.svg": "/RTYT/static/media/edu.36178190914a5a8a7f393995079e0d1f.svg",
+    "static/media/whiteHome.svg": "/RTYT/static/media/whiteHome.102af2e60fd765d0fe97e2688da96952.svg",
+    "static/media/home.svg": "/RTYT/static/media/home.30463d295e74981a54b3f887fcabdfa5.svg",
+    "static/media/whiteEmail.svg": "/RTYT/static/media/whiteEmail.5ec6fe32d584d49ab715f5f0327c374e.svg",
+    "index.html": "/RTYT/index.html",
+    "main.14df37d5.css.map": "/RTYT/static/css/main.14df37d5.css.map",
+    "main.305c62ae.js.map": "/RTYT/static/js/main.305c62ae.js.map",
+    "787.84ed59d6.chunk.js.map": "/RTYT/static/js/787.84ed59d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1312c90d.css",
-    "static/js/main.a61f16eb.js"
+    "static/css/main.14df37d5.css",
+    "static/js/main.305c62ae.js"
   ]
 }
