@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RTYT/static/css/main.14df37d5.css",
-    "main.js": "/RTYT/static/js/main.7ca67bc7.js",
+    "main.js": "/RTYT/static/js/main.37744a4c.js",
     "static/js/787.84ed59d6.chunk.js": "/RTYT/static/js/787.84ed59d6.chunk.js",
     "static/media/Inter-VariableFont_slnt,wght.ttf": "/RTYT/static/media/Inter-VariableFont_slnt,wght.853e01975d2783d9fa29.ttf",
     "static/media/Montserrat-VariableFont_wght.ttf": "/RTYT/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
@@ -20,11 +20,11 @@
     "static/media/whiteEmail.svg": "/RTYT/static/media/whiteEmail.5ec6fe32d584d49ab715f5f0327c374e.svg",
     "index.html": "/RTYT/index.html",
     "main.14df37d5.css.map": "/RTYT/static/css/main.14df37d5.css.map",
-    "main.7ca67bc7.js.map": "/RTYT/static/js/main.7ca67bc7.js.map",
+    "main.37744a4c.js.map": "/RTYT/static/js/main.37744a4c.js.map",
     "787.84ed59d6.chunk.js.map": "/RTYT/static/js/787.84ed59d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14df37d5.css",
-    "static/js/main.7ca67bc7.js"
+    "static/js/main.37744a4c.js"
   ]
 }
