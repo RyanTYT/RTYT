@@ -1,0 +1,5 @@
+.page {
+    padding-left: 2.5%;
+	font-family: var(--word-font);
+	color: var(--dark-word-color);
+}

@@ -1,0 +1,36 @@
+.background, .container {
+    --header-height: 250px;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    top: -30vh;
+    height: calc(30vh + var(--header-height));
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+
+    padding-top: 2.5%;
+    padding-left: 2.5%;
+    height: var(--header-height);
+}
+
+.header {
+	font-family: var(--word-font);
+	font-size: 5em;
+	font-weight: 900;
+	color: var(--light-word-color);
+}
+
+.description {
+	padding-top: 0.5%;
+
+	font-family: var(--word-font);
+	font-size: 1.2em;
+	font-weight: 600;
+	color: var(--light-word-color);
+	line-height: 1.2em;
+}

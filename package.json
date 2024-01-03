@@ -1,24 +1,32 @@
 {
-  "name": "rtyt",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
-  }
+	"name": "rtyt",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@tsparticles/engine": "^3.0.3",
+		"@tsparticles/react": "^3.0.0",
+		"@tsparticles/slim": "^3.0.3",
+		"@types/react-scroll": "^1.8.10",
+		"hamburger-react": "^2.5.0",
+		"next": "^14.0.4",
+		"next-images": "^1.8.5",
+		"node": "^21.2.0",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-scroll": "^1.9.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.4",
+		"typescript": "^5"
+	}
 }

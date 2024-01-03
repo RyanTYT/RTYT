@@ -1,0 +1,12 @@
+.header {
+    font-family: var(--word-font);
+    font-size: 5em;
+    font-weight: 900;
+    text-align: center;
+    color: var(--dark-word-color);
+}
+
+.projects {
+	display: flex;
+	flex-direction: column;
+}

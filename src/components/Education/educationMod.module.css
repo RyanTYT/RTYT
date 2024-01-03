@@ -1,0 +1,24 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	width: 400px;
+	min-width: 400px;
+	color: var(--dark-word-color);
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+	align-items: center;
+    text-align: center;
+}
+
+.header {
+    font-weight: 500;
+}
+
+.icon {
+    position: relative;
+    height: 64px;
+    width: 64px;
+}

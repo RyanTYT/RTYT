@@ -1,0 +1,67 @@
+.bigContainer {
+	position: relative;
+
+	width: 100%;
+	height: 10vh;
+}
+
+.background {
+	position: absolute;
+	width: 100%;
+	height: 10vh;
+	overflow: hidden;
+}
+
+.details {
+    position: absolute;
+    right: 10px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    color: var(--light-word-color);
+    font-weight: 700;
+
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.contacts {
+	position: relative;
+	width: 100%;
+	height: 10vh;
+
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+}
+
+.container {
+	min-width: 520px;
+	height: 10vh;
+
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.phone {
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	justify-content: center;
+
+	text-decoration: none;
+
+	color: var(--light-word-color);
+
+    margin-left: -15px;
+}
+
+.outside {
+    position: absolute;
+    display: none;
+}

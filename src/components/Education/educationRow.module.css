@@ -1,0 +1,113 @@
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 570px;
+	width: 97.5%;
+}
+
+.header {
+	position: relative;
+	height: 50px;
+	font-family: var(--word-font);
+	font-size: 2em;
+	font-weight: 700;
+}
+
+.rowContainer {
+	position: relative;
+	height: 400px;
+}
+
+.row {
+	position: relative;
+	padding-top: 100px;
+    margin-bottom: 50px;
+	height: 300px;
+	display: flex;
+	flex-direction: row;
+
+	overflow: scroll;
+	/* hide scrollbar */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+/* hide scroller */
+.row::-webkit-scrollbar {
+	display: none;
+}
+
+.rowContainer:hover .longRow {
+	-webkit-animation-play-state: paused !important;
+	-moz-animation-play-state: paused !important;
+	-o-animation-play-state: paused !important;
+	animation-play-state: paused !important;
+}
+
+.longRow {
+	display: flex;
+	flex-direction: row;
+	z-index: 5;
+
+	position: absolute;
+}
+
+.primary {
+	animation: toPrimary linear infinite;
+}
+
+.secondary {
+	translate: 100%;
+
+	animation: toSecondary linear infinite;
+}
+
+@keyframes beforeAnimate {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes currentAnimate {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(200%);
+	}
+}
+
+@keyframes afterAnimate {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(300%);
+	}
+}
+
+.before {
+	transform: translateX(0%);
+	animation: beforeAnimate linear infinite;
+}
+
+.current {
+	transform: translateX(100%);
+	animation: currentAnimate linear infinite;
+}
+
+.after {
+	transform: translateX(200%);
+	animation: afterAnimate linear infinite;
+}
+
+.footnote {
+	display: flex;
+	flex-direction: column;
+
+	height: 70px;
+}

@@ -1,0 +1,23 @@
+.bba {
+	/* clip-path: polygon(  <path d="" fill="#000000" />); */
+	/* clip-path: path("M10,15 a1,1 0 0,0 64,64") */
+	clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.bza {
+	/* clip-path: path("M10,15 a1,1 0 0,0 64,0"); */
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.line {
+	stroke: rgb(255, 0, 0);
+	stroke-width: 255;
+}
+
+.both {
+    position: relative;
+}
+
+.overlap {
+    position: absolute;
+}
