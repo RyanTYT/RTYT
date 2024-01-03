@@ -6,8 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint",
-        "try": "npx serve out"
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@tsparticles/engine": "^3.0.3",
