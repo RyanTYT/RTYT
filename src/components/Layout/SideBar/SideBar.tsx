@@ -1,11 +1,8 @@
 "use client";
-import styles from "@/components/Layout/Sidebar/sidebar.module.css";
+import styles from "@/components/Layout/SideBar/sidebar.module.css";
 import { Spin as Hamburger } from "hamburger-react";
 import React, { ReactElement, useState } from "react";
 import SidebarLink from "@/components/Layout/SideBar/SidebarLink";
-// import { ReactComponent as Home } from "@home/icons/whiteHome.svg";
-// import { ReactComponent as Education } from "@home/icons/whiteEdu.svg";
-// import { ReactComponent as Project } from "@home/icons/whiteProject.svg";
 
 export default function SideBar() {
 	const [isOpen, setOpen] = useState(false);

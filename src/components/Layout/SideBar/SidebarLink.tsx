@@ -1,4 +1,4 @@
-import styles from "@/components/Layout/Sidebar/sidebarLink.module.css";
+import styles from "@/components/Layout/SideBar/sidebarLink.module.css";
 import { ReactElement } from "react";
 import Link from "next/link";
 
