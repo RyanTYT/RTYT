@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import CustomHeader from "@/components/Layout/Header/Header";
 
 export default function ProjectPage() {
-    const icons: string[] = ["/classmate.png"];
+    const icons: string[] = ["./classmate.png"];
 	const imgAlts: string[] = ["ClassMate"];
 	const titles: string[] = ["ClassMate"];
 	const descriptions: string[] = [

@@ -5,13 +5,13 @@ export default function Welcome() {
         <div className={styles.welcome}>
             <div className={styles.background}>
                 <img
-                    src="/PersonalPhotoBackground.jpeg"
+                    src="./PersonalPhotoBackground.jpeg"
                     alt="Perosnal Photo Background"
                 />
             </div>
             <img
                 className={styles.image}
-                src="/PersonalPhoto.jpeg"
+                src="./PersonalPhoto.jpeg"
                 alt="RTYT!"
             />
             <div className={styles.message}>

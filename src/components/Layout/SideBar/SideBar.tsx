@@ -8,9 +8,9 @@ export default function SideBar() {
 	const [isOpen, setOpen] = useState(false);
 
 	const icons = [
-		<img src="/icons/whiteHome.svg" key="HomeIcon"/>,
-		<img src="/icons/whiteEdu.svg" key="EduIcon"/>,
-		<img src="/icons/whiteProject.svg" key="ProjectIcon"/>,
+		<img src="./icons/whiteHome.svg" key="HomeIcon"/>,
+		<img src="./icons/whiteEdu.svg" key="EduIcon"/>,
+		<img src="./icons/whiteProject.svg" key="ProjectIcon"/>,
 	];
 	const texts = ["Home", "Education", "Projects"];
 	const links = ["/", "/education", "/projects"]; // to change this for react-router

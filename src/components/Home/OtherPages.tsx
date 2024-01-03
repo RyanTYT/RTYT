@@ -8,9 +8,9 @@ import styles from "@/components/Home/otherPages.module.css";
 export default function OtherPages() {
 	const pageLinks = ["/", "/education", "/projects"]; // to change this for react-router
 	const pageIcons: ReactElement[] = [
-		<img src="/icons/home.svg" key="HomeIcon"/>,
-		<img src="/icons/edu.svg" key="EduIcon"/>,
-		<img src="/icons/project.svg" key="ProjectIcon"/>,
+		<img src="./icons/home.svg" key="HomeIcon"/>,
+		<img src="./icons/edu.svg" key="EduIcon"/>,
+		<img src="./icons/project.svg" key="ProjectIcon"/>,
 	];
 	const pageDesc: string[] = ["Home", "Education", "Projects"];
 

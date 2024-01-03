@@ -4,7 +4,7 @@ import styles from "@/components/Home/aboutMe.module.css";
 export default function AboutMe() {
 	return (
 		<div className={styles.container}>
-			<img className={styles.image} src='/PersonalPhoto.jpeg' alt="RTYT!" />
+			<img className={styles.image} src='./PersonalPhoto.jpeg' alt="RTYT!" />
 			<div className={styles.text}>
 				Hi! I&quot;m currently a Year 2 undergraduate studying Business
 				Analytics (BZA) and Business Administration (BBA) in NUS
