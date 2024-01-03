@@ -90,4 +90,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        run: npx serve out
+        uses: actions/deploy-pages@v4

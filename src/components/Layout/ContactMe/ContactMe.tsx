@@ -23,7 +23,7 @@ export default function ContactMe() {
             <div className={styles.contacts}>
                 <div className={styles.container}>
                     <a href="https://github.com/Ryan-loves-movies">
-                        <img src="/icons/whiteGithub.svg" alt="Github" />
+                        <img src="./icons/whiteGithub.svg" alt="Github" />
                     </a>
                     <a href="https://www.linkedin.com/in/ryan-tan-yan-tong-b820121a3/">
                         <div
@@ -32,16 +32,16 @@ export default function ContactMe() {
                             }}
                         >
                             <img
-                                src="/icons/whiteLinkedin.svg"
+                                src="./icons/whiteLinkedin.svg"
                                 alt="Linkedin"
                             />
                         </div>
                     </a>
                     <a href="mailto:ryan.tyt@u.nus.edu">
-                        <img src="/icons/whiteEmail.svg" alt="Email" />
+                        <img src="./icons/whiteEmail.svg" alt="Email" />
                     </a>
                     <a href="tel:+65 96433328" className={styles.phone}>
-                        <img src="/icons/whitePhone.svg" alt="Phone" />
+                        <img src="./icons/whitePhone.svg" alt="Phone" />
                         <span>+65 9643 3328</span>
                     </a>
                 </div>
