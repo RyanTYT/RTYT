@@ -15,7 +15,7 @@ export default function Welcome() {
                 alt="RTYT!"
             />
             <div className={styles.message}>
-                <div className={styles.header}>Hi! I&quot;m</div>
+                <div className={styles.header}>Hi! I&apos;m</div>
                 <div className={styles.header_name}>
                     <div className={styles.header_name_row}>
                         <span className={styles.header_name_i}>R</span>

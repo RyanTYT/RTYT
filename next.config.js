@@ -1,12 +1,18 @@
 /** @type {import('next').NextConfig} */
 
-const repo = "RTYT";
+const env = process.env.NODE_ENV;
+var repo;
+if (env === "development") {
+	repo = "";
+} else {
+	repo = "RTYT";
+}
 const assetPrefix = `/${repo}/`;
 const basePath = `/${repo}`;
 
 const nextConfig = {
-	basePath: basePath,
-	assetPrefix: assetPrefix,
+	// basePath: basePath,
+	// assetPrefix: assetPrefix,
 	output: "export",
 	images: {
 		unoptimized: true,

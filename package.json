@@ -6,6 +6,7 @@
         "dev": "next dev",
         "build": "next build && touch ./out/.nojekyll",
         "start": "next start",
+        "startProd": "npx serve out",
         "lint": "next lint",
         "try": "gh-pages -d out -t true"
     },

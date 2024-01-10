@@ -2,7 +2,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	height: 570px;
+    height: fit-content;
 	width: 97.5%;
 }
 
@@ -16,14 +16,14 @@
 
 .rowContainer {
 	position: relative;
-	height: 400px;
+	height: 350px;
 }
 
 .row {
 	position: relative;
-	padding-top: 100px;
+	padding-top: 50px;
     margin-bottom: 50px;
-	height: 300px;
+	height: 250px;
 	display: flex;
 	flex-direction: row;
 
@@ -51,16 +51,6 @@
 	z-index: 5;
 
 	position: absolute;
-}
-
-.primary {
-	animation: toPrimary linear infinite;
-}
-
-.secondary {
-	translate: 100%;
-
-	animation: toSecondary linear infinite;
 }
 
 @keyframes beforeAnimate {

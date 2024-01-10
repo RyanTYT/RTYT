@@ -47,18 +47,27 @@
 	justify-content: space-evenly;
 }
 
-.phone {
-	display: flex;
-	flex-direction: row;
+.container a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-	align-items: center;
-	justify-content: center;
+    text-decoration: none;
+}
 
-	text-decoration: none;
+.container a img {
+    display: flex;
+    justify-self: center;
+    width: 64px;
+    height: 64px;
+}
 
-	color: var(--light-word-color);
+.container a span {
+    text-decoration: none;
+    color: var(--light-word-color);
 
-    margin-left: -15px;
+    font-weight: 600;
 }
 
 .outside {

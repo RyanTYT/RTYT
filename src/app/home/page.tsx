@@ -7,25 +7,25 @@ import { useRef } from "react";
 import useScrollOnChange from "@/hooks/useScrollOnChange";
 
 export default function Home() {
-    const firstElem = useRef(null);
-    const secElem = useRef(null);
+	const firstElem = useRef(null);
+	const secElem = useRef(null);
 
-    useScrollOnChange(firstElem, "first-section", scroller);
-    useScrollOnChange(secElem, "second-section", scroller);
+	useScrollOnChange(firstElem, "first-section", scroller);
+	useScrollOnChange(secElem, "second-section", scroller);
 
-    return (
-        <>
-            <div ref={firstElem}>
-                <ReactScrollElement name="first-section">
-                    <Welcome />
-                </ReactScrollElement>
-            </div>
-            <div ref={secElem}>
-                <ReactScrollElement name="second-section">
-                    <AboutMe />
-                    <OtherPages />
-                </ReactScrollElement>
-            </div>
-        </>
-    );
+	return (
+		<>
+			<div ref={firstElem}>
+				<ReactScrollElement name="first-section">
+					<Welcome />
+				</ReactScrollElement>
+			</div>
+			<div ref={secElem}>
+				<ReactScrollElement name="second-section">
+					<AboutMe />
+					<OtherPages />
+				</ReactScrollElement>
+			</div>
+		</>
+	);
 }

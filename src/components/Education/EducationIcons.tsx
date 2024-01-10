@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@/components/Education/educationIcons.module.css";
 
 export const Line = () => (
-	<svg height="64px" width="64px">
+	<svg height="32px" width="32px">
 		<line
 			x1="5%"
 			y1="5%"
@@ -22,8 +22,8 @@ export const BZAsvg = () => (
 		version="1.1"
 		id="Capa_1"
 		xmlns="http://www.w3.org/2000/svg"
-		width="64px"
-		height="64px"
+		width="32px"
+		height="32px"
 		viewBox="0 0 357.742 357.741"
 		stroke="#ffffff"
 	>
@@ -69,8 +69,8 @@ export const BZAsvg = () => (
 export const BBAsvg = () => (
 	<svg
 		fill="#161616"
-		width="64px"
-		height="64px"
+		width="32px"
+		height="32px"
 		viewBox="0 0 24 24"
 		xmlns="http://www.w3.org/2000/svg"
 		stroke="#161616"
@@ -101,8 +101,8 @@ const HalfBZAsvg = () => (
 		version="1.1"
 		id="Capa_1"
 		xmlns="http://www.w3.org/2000/svg"
-		width="64px"
-		height="64px"
+		width="32px"
+		height="32px"
 		viewBox="0 0 357.742 357.741"
 		stroke="#161616"
 		className={styles.bza}
@@ -149,8 +149,8 @@ const HalfBZAsvg = () => (
 const HalfBBAsvg = () => (
 	<svg
 		fill="#161616"
-		width="64px"
-		height="64px"
+		width="32px"
+		height="32px"
 		viewBox="0 0 24 24"
 		xmlns="http://www.w3.org/2000/svg"
 		stroke="#161616"
