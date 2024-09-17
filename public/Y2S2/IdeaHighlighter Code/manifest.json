@@ -1,0 +1,27 @@
+{
+	"name": "HighlightGPT",
+	"description": "Highlights most important sentences",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "index.html"
+	},
+	"permissions": ["scripting", "tabs", "activeTab"],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content.js"],
+			"run_at": "document_end"
+		}
+	],
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+    "icons": {
+        "16": "highlighterIcon16.png",
+        "32": "highlighterIcon32.png",
+        "48": "highlighterIcon48.png",
+        "128": "highlighterIcon128.png"
+    }
+}

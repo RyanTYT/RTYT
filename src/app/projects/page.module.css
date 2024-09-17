@@ -1,14 +1,16 @@
-.header {
-    font-family: var(--word-font);
-    font-size: 5em;
-    font-weight: 900;
-    text-align: center;
-    color: var(--dark-word-color);
-}
+/* .header { */
+/*     font-family: var(--word-font); */
+/*     font-size: 5em; */
+/*     font-weight: 900; */
+/*     text-align: center; */
+/*     color: var(--dark-word-color); */
+/* } */
 
 .projects {
 	display: flex;
+	padding: 0rem 1.875rem;
 	flex-direction: column;
-
-    font-family: var(--word-font);
+	align-items: flex-start;
+	gap: 3rem;
+	align-self: stretch;
 }

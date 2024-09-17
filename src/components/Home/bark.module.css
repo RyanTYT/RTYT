@@ -1,0 +1,31 @@
+.bark {
+    position: absolute;
+    width: var(--branch-thickness);
+    height: 100%;
+    left: var(--tree-position);
+
+    transform: translateX(-50%);
+    background-color: var(--font-color);
+}
+
+.progress {
+    position: absolute;
+    width: var(--branch-thickness);
+    top: 0%;
+    left: var(--tree-position);
+
+    transform: translateX(-50%);
+    background-color: var(--highlight);
+}
+
+@media (max-width: 1000px) {
+    .progress {
+        position: absolute;
+        width: var(--branch-thickness);
+        top: 0%;
+        left: var(--tree-position);
+
+        /* transform: translateX(-50%); */
+        background-color: var(--highlight);
+    }
+}

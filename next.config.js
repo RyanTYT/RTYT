@@ -5,10 +5,11 @@ var repo;
 if (env === "development") {
 	repo = "";
 } else {
-	repo = "RTYT";
+	repo = "/RTYT";
 }
-const assetPrefix = `/${repo}/`;
-const basePath = `/${repo}`;
+
+const assetPrefix = `${repo}/`;
+const basePath = `${repo}`;
 
 const nextConfig = {
 	basePath: basePath,

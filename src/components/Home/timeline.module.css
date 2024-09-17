@@ -1,0 +1,6 @@
+.tree {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    height: fit-content;
+}

@@ -110,46 +110,120 @@
 /* } */
 
 :root {
-	width: 100%;
-	--light-word-color: #ecdbba;
-	--dark-word-color: #161616;
-	--word-font: "Segoe UI";
+    width: 100%;
+    --light-word-color: #ecdbba;
+    --dark-word-color: #161616;
+    --word-font: "Segoe UI";
+
+    --background-color: #ffffff;
+    --font-color: #000000;
+    --flip-font-color: #ffffff;
+    --font-underline: #00000033;
+    --highlight: #9a6d38;
+    --important: #005286;
+    --important-translucent: rgb(0, 82, 134, 0.7);
+
+    --tree-position: 50%;
+    --branch-thickness: 0.25rem;
+
+    --project-width: 25rem;
+    --project-height: 20rem;
+    --project-image-width: 16rem;
+    --project-image-height: 10rem;
+    --project-image-exceed-top: 1.75rem;
+    --project-image-exceed-left: 1.5rem;
+
+    --animation-duration: 0.5s;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (max-width: 1000px) {
+    :root {
+        --tree-position: 15%;
+    }
+}
+
+.normal-font-style {
+    font-family: "EB Garamond";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.normal-header-font-style {
+    font-family: "EB Garamond";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.important-font-style {
+    font-family: "EB Garamond";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+}
+
+@media (prefers-color-scheme: dark) {}
+
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 1000;
+    font-stretch: 0% 200%;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: "Montserrat";
-	src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
-		format("truetype");
-	font-weight: 100 1000;
-	font-stretch: 0% 200%;
-	font-style: normal;
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 1000;
+    font-stretch: 0% 200%;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: "Inter";
-	src: url("../fonts/Inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
-	font-weight: 100 1000;
-	font-stretch: 0% 200%;
-	font-style: normal;
+    font-family: "Inter";
+    src: url("../fonts/Inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+    font-weight: 100 1000;
+    font-stretch: 0% 200%;
+    font-style: normal;
 }
 
 body {
-	height: 100%;
-	margin: 0px;
-    padding: 0px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Montserrat",
-		"Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    /* height: 100%; */
+    /* margin: 0px; */
+    /* padding: 0px; */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", */
+    /* "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Montserrat", */
+    /* "Helvetica Neue", sans-serif; */
+    /* -webkit-font-smoothing: antialiased; */
+    /* -moz-osx-font-smoothing: grayscale; */
 
-	background-color: #ecdbba;
+    /* background-color: #ecdbba; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.25rem;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+span,
+a {
+    color: var(--font-color);
+    font-family: "EB Garamond";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
+
+/* code { */
+/* 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", */
+/* 		monospace; */
+/* } */
