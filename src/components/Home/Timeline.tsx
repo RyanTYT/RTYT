@@ -1,4 +1,5 @@
 "use client";
+
 import styles from "@/components/Home/timeline.module.css";
 import Branch from "@/components/Home/Branch";
 import Bark from "@/components/Home/Bark";
@@ -8,6 +9,8 @@ import ProjectPopup from "@/components/Home/ProjectPopup";
 import Year from "@/components/Home/Year";
 
 import projects from "@/data/projects.json";
+import SemesterBranch from "@/components/Home/SemesterBranch";
+import ProjectBranch from "@/components/Home/ProjectBranch";
 
 export default function Timeline({
 	show_academics,
@@ -63,19 +66,10 @@ export default function Timeline({
 						);
 						if (show_academics && semester) {
 							alignment = toggleAlignment(alignment);
-							console.log(alignment);
-							const [active, setActive] = useState(false);
 							branches.push(
-								<Branch
+								<SemesterBranch
 									date={semester.date}
-									content={
-										<Semester
-											semester={semester.semester}
-											active={active}
-										/>
-									}
-									// semester={semester_data.semester}
-									setActiveParent={setActive}
+									semester={semester.semester}
 									alignment={alignment}
 									id={semester.semester}
 									key={semester.semester}
@@ -91,32 +85,23 @@ export default function Timeline({
 							)
 							.forEach((project) => {
 								alignment = toggleAlignment(alignment);
-								const [active, setActive] = useState(false);
 								branches.push(
-									<Branch
+									<ProjectBranch
 										date={project.date}
-										content={
-											<ProjectPopup
-												img_src={project.img_src}
-												img_alt={project.img_alt}
-												title={project.title}
-												achievement={project.achivement}
-												description={
-													project.description
-												}
-												skills={project.skills}
-												live_link={project.live_link}
-												source_code_link={
-													project.source_code_link
-												}
-												alignment={alignment}
-											/>
-										}
-										// semester={semester_data.semester}
-										setActiveParent={setActive}
-										alignment={alignment}
 										id={project.title}
 										key={project.title}
+
+										img_src={project.img_src}
+										img_alt={project.img_alt}
+										title={project.title}
+										achievement={project.achivement}
+										description={project.description}
+										skills={project.skills}
+										live_link={project.live_link}
+										source_code_link={
+											project.source_code_link
+										}
+										alignment={alignment}
 									/>
 								);
 							});

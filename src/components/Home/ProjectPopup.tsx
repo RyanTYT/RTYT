@@ -50,6 +50,7 @@ export default function ProjectPopup({
 						) : (
 							<span
 								className={`${styles.achievement} important-font-style`}
+                                key={`${styles.achievement}`}
 							>
 								{achievement}
 							</span>

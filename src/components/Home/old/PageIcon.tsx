@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import Link from "next/link";
-import styles from "@/components/Home/pageIcon.module.css";
+import styles from "@/components/Home/old/pageIcon.module.css";
 
 export default function PageIcon({
 	link,
