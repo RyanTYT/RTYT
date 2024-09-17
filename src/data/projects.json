@@ -18,7 +18,7 @@
 			"SupaBase (SQL DB)",
 			"API"
 		],
-		"img_src": "/Y1 Summer/classmate_demo.png",
+		"img_src": "./Y1 Summer/classmate_demo.png",
 		"img_alt": "ClassMate Website",
 		"live_link": "https://class-mate-am4x2tqtx-ryan-loves-movies.vercel.app",
 		"source_code_link": "https://github.com/RyanTYT/ClassMate",
@@ -35,7 +35,7 @@
 			"Analysed and Produced a Report detailing the multi-faceted nature of infrastructure spending under Jokowi Presidency"
 		],
 		"skills": ["Economic Analysis"],
-		"img_src": "/Y1S2/FEF.png",
+		"img_src": "./Y1S2/FEF.png",
 		"img_alt": "Future Economy Forum Report",
 		"live_link": "",
 		"source_code_link": "",
@@ -52,7 +52,7 @@
 			"Did Monte Carlo Simulation, Sensitivity Analysis"
 		],
 		"skills": ["Asset Management Analysis"],
-		"img_src": "/Y1S2/NTU Asset Management.png",
+		"img_src": "./Y1S2/NTU Asset Management.png",
 		"img_alt": "NTU Asset Management Competition",
 		"live_link": "",
 		"source_code_link": "",
@@ -74,7 +74,7 @@
 			"Google Collab",
 			"Analysis"
 		],
-		"img_src": "/Y2S1/Citadel Datathon.png",
+		"img_src": "./Y2S1/Citadel Datathon.png",
 		"img_alt": "Citadel Datathon Report",
 		"live_link": "",
 		"source_code_link": "",
@@ -90,7 +90,7 @@
 			"Explored Basketball Statistics with K-means Clustering"
 		],
 		"skills": ["R", "Unsupervised Machine Learning"],
-		"img_src": "/Y2S1/Anaconda Data Science Expo (Y2S1).png",
+		"img_src": "./Y2S1/Anaconda Data Science Expo (Y2S1).png",
 		"img_alt": "Anaconda Report",
 		"live_link": "",
 		"source_code_link": "",
@@ -106,7 +106,7 @@
 			"Designed and Built a web extension that highlights the most important sentences on a given page using TextRank Algorithm"
 		],
 		"skills": ["Javascript", "Extensions", "ReactJS"],
-		"img_src": "/Y2S2/IdeaHighlighter (Hack&Roll 2024) (Y2S2).png",
+		"img_src": "./Y2S2/IdeaHighlighter (Hack&Roll 2024) (Y2S2).png",
 		"img_alt": "IdeaHighlighter on an example Wikipedia Page",
 		"live_link": "",
 		"source_code_link": "https://github.com/RyanTYT/HighlightGPT",
@@ -122,7 +122,7 @@
 			"Designed and Built a website with a group that showcases top recipes and provides recommendations for recipes based on personal diet"
 		],
 		"skills": ["Javascript", "HTML", "CSS"],
-		"img_src": "/Y2S2/MealBuddy (BT3103) (Y2S2).png",
+		"img_src": "./Y2S2/MealBuddy (BT3103) (Y2S2).png",
 		"img_alt": "MealBuddy",
 		"live_link": "https://mealbuddy-ee9db.web.app",
 		"source_code_link": "https://github.com/BT3103AppDev1/l1-final-term-project-group-6-mealbuddy",
@@ -138,7 +138,7 @@
 			"Made a Report in Tableau based on the state of the Chicago Public Taxi Dataset outlining analysis and recommendations"
 		],
 		"skills": ["Tableau", "Descriptive Analytics"],
-		"img_src": "/Y2S2/Chicago Taxi Report (Y2S2).png",
+		"img_src": "./Y2S2/Chicago Taxi Report (Y2S2).png",
 		"img_alt": "Chicago Taxi Report",
 		"live_link": "",
 		"source_code_link": "",
@@ -155,7 +155,7 @@
 			"Analysed and Debugged for students, deepening understanding of complicated problems"
 		],
 		"skills": ["Data Structures", "Algorithms", "Problem Solving"],
-		"img_src": "/Y2S2/NUS.png",
+		"img_src": "./Y2S2/NUS.png",
 		"img_alt": "NUS",
 		"live_link": "",
 		"source_code_link": "",
@@ -172,7 +172,7 @@
 			"Applied AI and Prompt Engineering to solve novel issues such as bias detection"
 		],
 		"skills": ["Frontend", "Backend", "SAPUI5", "SAP CAP"],
-		"img_src": "/Y2 Summer/SAP.png",
+		"img_src": "./Y2 Summer/SAP.png",
 		"img_alt": "SAP",
 		"live_link": "",
 		"source_code_link": "",

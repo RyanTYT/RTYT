@@ -125,7 +125,7 @@ export default function ProjectPopup({
 														width: "1.5rem",
 														height: "1.5rem",
 													}}
-													src="/code.svg"
+													src="./code.svg"
 												/>
 											</div>
 											<span
