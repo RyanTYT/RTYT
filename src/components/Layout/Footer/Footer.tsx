@@ -12,7 +12,7 @@ export default function ContactMe() {
                 Ryan Tan Yan Tong
             </span>
             <div className={styles.links}>
-                <a href="https://github.com/Ryan-loves-movies">
+                <a href="https://github.com/RyanTYT">
                     <span
                         className="normal-font-style"
                         style={{ color: "var(--important)" }}
@@ -20,7 +20,7 @@ export default function ContactMe() {
                         Github
                     </span>
                 </a>
-                <a href="https://www.linkedin.com/in/ryan-tan-yan-tong-b820121a3/">
+                <a href="https://www.linkedin.com/in/ryan-tan-yan-tong/">
                     <span
                         className="normal-font-style"
                         style={{ color: "var(--important)" }}
