@@ -50,7 +50,7 @@ export default function ProjectPopup({
 						) : (
 							<span
 								className={`${styles.achievement} important-font-style`}
-                                key={`${styles.achievement}`}
+								key={`${styles.achievement}`}
 							>
 								{achievement}
 							</span>
@@ -62,7 +62,10 @@ export default function ProjectPopup({
 						<div style={{ height: "fit-content" }}>
 							<ul>
 								{description.map((point) => (
-									<li className="normal-font-style">
+									<li
+										className="normal-font-style"
+										key={point}
+									>
 										{point}
 									</li>
 								))}
