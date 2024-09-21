@@ -25,6 +25,8 @@
     font-size: 1.5em;
     color: var(--dark-word-color);
     overflow-y: auto;
+
+    padding: 1.5rem;
 }
 
 @keyframes highlight {
