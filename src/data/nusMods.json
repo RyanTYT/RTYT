@@ -1,6 +1,39 @@
 {
 	"modules": [
 		{
+			"name": "BT4013",
+			"moduleCode": "BT",
+			"semester": "Y3S1",
+			"title": "Analytics for Capital Market Trading and Investment",
+			"description": "This course broadly covers quantitative trading, focusing on strategies built through time-series analysis. Techniques for identifying trading opportunities by sifting through historical data will be explored. The course also addresses the quantification of risk associated with potential trading decisions.",
+			"review": null,
+			"grade": "A+",
+			"type": "BZA",
+			"moduleCredit": 4.0
+		},
+		{
+			"name": "BT4012",
+			"moduleCode": "BT",
+			"semester": "Y3S1",
+			"title": "Fraud Analytics",
+			"description": "Anomaly detection, data preparation, deep learning applications",
+			"review": null,
+			"grade": "A",
+			"type": "BZA",
+			"moduleCredit": 4.0
+		},
+		{
+			"name": "CP3880",
+			"moduleCode": "CP",
+			"semester": "Y3S1",
+			"title": "ATAP (Advanced Technology Attachment Programme)",
+			"description": "Internship",
+			"review": null,
+			"grade": "CS",
+			"type": "BZA",
+			"moduleCredit": 12.0
+		},
+		{
 			"name": "ST2334",
 			"moduleCode": "ST",
 			"semester": "Y2S2",
