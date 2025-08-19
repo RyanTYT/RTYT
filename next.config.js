@@ -6,11 +6,11 @@ const { webpack } = require("next/dist/compiled/webpack/webpack");
 const env = process.env.NODE_ENV;
 var repo = "";
 
-if (env === "development") {
-    repo = "";
-} else {
-    repo = "/RTYT";
-}
+// if (env === "development") {
+//     repo = "";
+// } else {
+repo = "/RTYT";
+// }
 
 const assetPrefix = repo === "" ? "" : `${repo}/`;
 const basePath = `${repo}`;
