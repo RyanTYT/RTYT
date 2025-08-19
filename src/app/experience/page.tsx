@@ -13,6 +13,7 @@ import {
 import { createStyles } from "@/app/theme";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const ExperiencePage = () => {
 	const styles = createStyles();
@@ -389,10 +390,12 @@ const ExperiencePage = () => {
 							and algorithmic trading roles.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<button className={styles.buttons.primary} onClick={() => router.push("/projects")}>
-								View My Projects
-								<ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-							</button>
+                            <Link href="/projects">
+                              <button className={styles.buttons.primary}>
+                                View My Projects
+                                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                              </button>
+                            </Link>
                             <a 
                               href="/resume/resume.pdf" 
                               download 

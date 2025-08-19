@@ -5,6 +5,7 @@ import { SocialLinksNav } from "@/components/home/common";
 import { Container } from "@/components/home/base";
 import { ReactNode } from "react";
 import { createStyles } from "@/app/theme";
+import Link from "next/link";
 
 const styles = createStyles();
 // Navigation Components
@@ -26,9 +27,9 @@ const NavLink = ({
 
 	if (href !== "")
 		return (
-			<a className={`${baseStyle} ${className}`} href={href} {...props}>
+			<Link className={`${baseStyle} ${className}`} href={href} {...props}>
 				{children}
-			</a>
+			</Link>
 		);
 
 	return (

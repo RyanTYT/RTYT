@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 		fs.readdir("src/content/journal")
 	);
 	return files.filter((file) => file !== ".DS_Store").map((file) => ({
-		id: file.replace(/\.mdx$/, ""),
+		id: `${file.replace(/\.mdx$/, "")}`,
 	}));
 }
 

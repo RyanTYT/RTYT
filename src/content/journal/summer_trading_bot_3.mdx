@@ -15,19 +15,19 @@ Honestly, this was probably the best choice I made for the bot so far - on one h
 
 ### Order Engine:
 
-![Order Engine Architecture](/journal_images/OrderEngine.jpeg)
+![Order Engine Architecture](/RTYT/journal_images/OrderEngine.jpeg)
 
 Furthermore, I have a Consolidator struct that easily abstracts subscriptions for contracts and re-subscribes in case data goes stale - the trigger for each strategy subscription is also therefore, unified for conflicting contracts and no additional unecessary subscriptions to the same contract is made. 
 
 ### Consolidator:
 
-![Consolidator Architecture](/journal_images/Consolidator.jpeg)
+![Consolidator Architecture](/RTYT/journal_images/Consolidator.jpeg)
 
 ## Final Architecture
 
 The following showcases the flow of updates in the program with the key table definitions.
 
-![Flow](/journal_images/sync_flow.jpeg)
+![Flow](/RTYT/journal_images/sync_flow.jpeg)
 
 Honestly, because of these changes, one could easily assume the bot did not require much work on first glance - everything is much cleaner and the logic isn't too sophisticated. Yet, I took roughly a full month of full dedication to get this up and stable - several iterations including obsolete code due to new DB triggers, several minor updates to the database schema over time and ensuring that I am mostly using the right structures (like synchronous Mutexes or tokio Mutexes, ...) or ensuring infinite loops are spun up in a new OS kernel thread (rather than a new tokio thread), .... All this won't be seen because the repo that I will eventually make public will be the skeleton, not including any of the strategies I am currently testing out.
 

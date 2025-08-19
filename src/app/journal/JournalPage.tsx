@@ -13,6 +13,7 @@ import {
 import { createStyles } from "@/app/theme";
 import { useRouter } from "next/navigation";
 import { MdMetadata } from "@/app/journal/page";
+import Link from "next/link";
 
 // Sample journal data
 const raw_categories = [
@@ -252,48 +253,49 @@ export default function JournalPage({ posts }: { posts: MdMetadata[] }) {
                     {filteredPosts.map((post) => (
                         <div
                             key={post.id}
-                            onClick={() => router.push(`journal/${post.id}`)}
                             className={styles.cards.interactive}
                         >
-                            <div className="flex items-start gap-4">
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-2 mb-3">
-                                        {post.tags.slice(0, 3).map((tag) => (
-                                            <span key={tag} className={styles.tags.default}>
-                                                {tag}
-                                            </span>
-                                        ))}
-                                        {post.tags.length > 3 && (
-                                            <span className={styles.tags.secondary}>
-                                                +{post.tags.length - 3} more
-                                            </span>
-                                        )}
+                            <Link href={`journal/${post.id}`}>
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-3">
+                                            {post.tags.slice(0, 3).map((tag) => (
+                                                <span key={tag} className={styles.tags.default}>
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                            {post.tags.length > 3 && (
+                                                <span className={styles.tags.secondary}>
+                                                    +{post.tags.length - 3} more
+                                                </span>
+                                            )}
+                                        </div>
+
+                                        <h3
+                                            className={`${styles.typography.h4} mb-2 group-hover:text-sky-600 transition-colors`}
+                                        >
+                                            {post.title}
+                                        </h3>
+
+                                        <p className={`${styles.typography.muted} mb-4`}>
+                                            {post.summary}
+                                        </p>
+
+                                        <div className="flex items-center gap-4 text-sm text-slate-500">
+                                            <div className="flex items-center gap-1">
+                                                <Calendar className="w-4 h-4" />
+                                                {new Date(post.date).toLocaleDateString()}
+                                            </div>
+                                            <div className="flex items-center gap-1">
+                                                <Clock className="w-4 h-4" />
+                                                {post.readTime} min read
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <h3
-                                        className={`${styles.typography.h4} mb-2 group-hover:text-sky-600 transition-colors`}
-                                    >
-                                        {post.title}
-                                    </h3>
-
-                                    <p className={`${styles.typography.muted} mb-4`}>
-                                        {post.summary}
-                                    </p>
-
-                                    <div className="flex items-center gap-4 text-sm text-slate-500">
-                                        <div className="flex items-center gap-1">
-                                            <Calendar className="w-4 h-4" />
-                                            {new Date(post.date).toLocaleDateString()}
-                                        </div>
-                                        <div className="flex items-center gap-1">
-                                            <Clock className="w-4 h-4" />
-                                            {post.readTime} min read
-                                        </div>
-                                    </div>
+                                    <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-sky-600 transition-colors flex-shrink-0" />
                                 </div>
-
-                                <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-sky-600 transition-colors flex-shrink-0" />
-                            </div>
+                            </Link>
                         </div>
                     ))}
                 </div>

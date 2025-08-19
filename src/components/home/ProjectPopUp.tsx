@@ -8,6 +8,7 @@ import {
 	LucideIcon,
 } from "lucide-react";
 import { createStyles } from "@/app/theme";
+import Link from "next/link";
 
 type ProjectType = {
 	id: string;
@@ -155,12 +156,13 @@ const ProjectModal = ({
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-slate-200">
-                        {project.link && (<a href={project.link}>
-                                <button className={styles.buttons.primary}>
-                                    <Github className="w-5 h-5 mr-2" />
-                                    View Code
-                                </button>
-                            </a>
+                        {project.link && (
+                            <Link href={project.link} passHref>
+                              <button className={styles.buttons.primary}>
+                                <Github className="w-5 h-5 mr-2" />
+                                View Code
+                              </button>
+                            </Link>
                         )}
                         {/*<button className={styles.buttons.secondary}>
                             <ExternalLink className="w-5 h-5 mr-2" />

@@ -31,6 +31,8 @@ import { BulletList, SocialLinksFooter } from "@/components/home/common";
 import ProjectModal from "@/components/home/ProjectPopUp"
 import projects from "@/content/projects.json";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 
 type ProjectType = {
 	id: string;
@@ -88,6 +90,9 @@ const Portfolio = () => {
 		"System Architecture",
 	];
 
+    const basePath = process.env.NODE_ENV === "development" ? "" : "/RTYT";
+    console.log(`base path is ${basePath}`);
+
 	return (
 		<div className="min-h-screen bg-slate-50">
 			{/* Subtle Background */}
@@ -119,9 +124,11 @@ const Portfolio = () => {
 							</Text>
 
 							<div className="flex flex-col sm:flex-row gap-4">
-								<Button variant="primary" Icon={ChevronRight} onClick={() => router.push("/experience")}>
-									View My Experience
-								</Button>
+                                <Link href="/experience">
+                                  <Button variant="primary" Icon={ChevronRight}>
+                                    View My Experience
+                                  </Button>
+                                </Link>
 								<a 
                                   href="/resume/resume.pdf" 
                                   download 
@@ -139,7 +146,7 @@ const Portfolio = () => {
 								<div className="text-center mb-6">
 									<div className="w-32 h-32 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                                         <img 
-                                            src="/journal_images/selfie.jpeg" 
+                                            src={`${basePath}/journal_images/selfie.jpeg`}
                                             alt="Selfie" 
                                             className="w-full h-full object-cover rounded-full"
                                           />
