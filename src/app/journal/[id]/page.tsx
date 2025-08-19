@@ -2,11 +2,7 @@ import { createStyles } from "@/app/theme";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import matter from "gray-matter";
-import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { serialize } from "next-mdx-remote/serialize";
-import { metadata, summary } from "framer-motion/client";
-import { ArrowLeft } from "lucide-react";
 import BackButton from "@/components/home/client_base";
 
 export async function generateStaticParams() {

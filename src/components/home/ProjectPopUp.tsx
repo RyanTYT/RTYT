@@ -1,9 +1,6 @@
 import {
-	Brain,
 	TrendingUp,
-	ExternalLink,
 	Github,
-	BarChart3,
 	Layers,
 	X,
 	Code2,
@@ -21,8 +18,6 @@ type ProjectType = {
 	duration: string;
 	status: string;
 	tech: string[];
-	featured: boolean;
-	icon: LucideIcon;
 	details: {
 		overview: string;
 		architecture?: string[];

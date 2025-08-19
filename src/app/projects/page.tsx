@@ -26,8 +26,6 @@ type ProjectType = {
 	duration: string;
 	status: string;
 	tech: string[];
-	featured: boolean;
-	icon: LucideIcon;
 	details: {
 		overview: string;
 		architecture?: string[];
@@ -43,7 +41,7 @@ const ProjectsPage = () => {
 	const [selectedProject, setSelectedProject] = useState({} as ProjectType);
 	const styles = createStyles();
 
-    const otherProjects = projects.filter((p) => !p.featured);
+    const otherProjects = projects.filter((p) => p.type === "Academics");
 
 	return (
 		<div className="min-h-screen ">

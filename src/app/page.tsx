@@ -12,6 +12,7 @@ import {
 	Linkedin,
 	Github,
 	ExternalLink,
+    LucideIcon
 } from "lucide-react";
 
 // Import theme and components
@@ -21,7 +22,6 @@ import {
 	Container,
 	Grid,
 	Heading,
-	Link,
 	Section,
 	StatusBadge,
 	Text,
@@ -41,8 +41,6 @@ type ProjectType = {
 	duration: string;
 	status: string;
 	tech: string[];
-	featured: boolean;
-	icon: LucideIcon;
 	details: {
 		overview: string;
 		architecture?: string[];
@@ -71,7 +69,7 @@ const Portfolio = () => {
 	];
 
 	useEffect(() => {
-		const handleMouseMove = (e: any) => {
+		const handleMouseMove = (e: MouseEvent) => {
 			setMousePosition({ x: e.clientX, y: e.clientY });
 		};
 		window.addEventListener("mousemove", handleMouseMove);
@@ -112,7 +110,7 @@ const Portfolio = () => {
 								Seeking Quantitative Finance Opportunities
 							</StatusBadge>
 
-							<Heading level={1}>Hi, I'm Ryan!</Heading>
+							<Heading level={1}>Hi, I&apos;m Ryan!</Heading>
 
 							<Text variant="bodyLarge" className="mb-8">
 								Business Analytics student at NUS with experience in AI
@@ -179,7 +177,7 @@ const Portfolio = () => {
 					<div className="text-center mb-16">
 						<h2 className={styles.typography.h2}>Recent Work</h2>
 						<p className={`${styles.typography.bodyLarge} max-w-3xl mx-auto`}>
-							What I've been working on lately
+							What I&apos;ve been working on lately
 						</p>
 					</div>
 

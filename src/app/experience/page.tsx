@@ -108,7 +108,7 @@ const ExperiencePage = () => {
 		isLast,
 	}: {
 		item: {
-			id: any;
+			id: string;
 			icon: LucideIcon;
 			color: string;
 			period: string;
@@ -383,7 +383,7 @@ const ExperiencePage = () => {
 			<section className={`${styles.layout.section} bg-slate-50`}>
 				<div className={styles.layout.container}>
 					<div className={`${styles.utilities.textCenter} max-w-3xl mx-auto`}>
-						<h2 className={styles.typography.h2}>What's Next</h2>
+						<h2 className={styles.typography.h2}>What&#39;s Next</h2>
 						<p className={`${styles.typography.bodyLarge} mb-8`}>
 							Looking forward to applying my experience in quantitative finance
 							and algorithmic trading roles.

@@ -17,7 +17,7 @@ export default async function getPosts() {
 	);
 	const posts: MdMetadata[] = await Promise.all(
 		files.filter((file) => file !== ".DS_Store").map(async (file) => {
-			const { default: Post, metadata } = await import(
+			const { default: _Post, metadata } = await import(
 				`@/content/journal/${file}`
 			);
 			return {

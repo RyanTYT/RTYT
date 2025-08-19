@@ -109,7 +109,7 @@ export const theme = {
 };
 
 // Component style generators
-export const createStyles = (theme?: any) => ({
+export const createStyles = <T extends object>(theme?: T) => ({
     // Layout utilities
     layout: {
         container: `max-w-7xl mx-auto px-6`,

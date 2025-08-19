@@ -9,12 +9,10 @@ import {
     Code,
     MessageSquare,
     Search,
-    ArrowLeft,
 } from "lucide-react";
 import { createStyles } from "@/app/theme";
 import { useRouter } from "next/navigation";
 import { MdMetadata } from "@/app/journal/page";
-import { Button } from "@/components/home/base";
 
 // Sample journal data
 const raw_categories = [
@@ -95,14 +93,14 @@ export default function JournalPage({ posts }: { posts: MdMetadata[] }) {
         return filtered.sort(
             (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
-    }, [selectedCategory, searchTerm, selectedTags]);
+    }, [selectedCategory, searchTerm, selectedTags, posts]);
 
     // Get all unique tags
     const allTags: string[] = useMemo(() => {
         const tags = new Set();
         posts.forEach((post) => post.tags.forEach((tag) => tags.add(tag)));
         return Array.from(tags).sort();
-    }, []) as string[];
+    }, [posts]) as string[];
 
     const router = useRouter();
 
