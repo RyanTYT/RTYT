@@ -1,0 +1,52 @@
+export const metadata = {
+    title: "Hackathons",
+    date: "2025-07-18",
+    summary: "My experience with hackathons so far and my opinions on them",
+    category: "reflections",
+    tags: ["NUS", "academics", "independent learning", "hackathons"],
+    readTime: "3",
+};
+
+Hackathons: where you can apply practical skills on real world problems?
+
+# HackNRoll 2024
+
+This was my first hackathon ever and also shaped how I view hackathons now. 
+
+I did this with a group of my friends from RC4 and we had what I thought was an idea that wasn't half bad. We kept ideating for the first few hours of so, brainstorming about what we should make of it. However, I also thought that I should take this opportunity to learn something new as well and decided to build a chrome extension (Wow, was this a bad idea). I've built a web application before and thus had some fresh, unfounded confidence. It turns out a chrome extension is much different - you still compile with a webpack from javascript/typecript to the output folder and use that BUT importantly there is an additional background.js file and content.js file that you need to configure the package to explicitly compile to AND these files inherently have new functions you would not think about when just building a web app - content.js is what is used to interact with the actual page and background.js is what is running in the background.
+
+Now, realising there were two more additional files I explicitly needed was time-consuming enough but needing to set configurations to get those files was the nail in the coffin. So, I ended up writing the content.js file explicitly and inserting it in the output folder, not figuring out how to actually configure the package to compile those additional files (don't worry I figured this out in a more recent hackathon now).
+
+Overall, I had to agree with the judges that the features we had were lackluster due to how much time was spent making the extension work rather than actually extending features. This was the first thing I took away - as much as you are there to learn at a hackathon, a balance is required and we need to know when to maybe move on to another means of implementing the feature to meet the deadline.
+
+If you wanna check out this extension for fun, [here you go](https://github.com/RyanTYT/HighlightGPT)!
+
+# HackNRoll 2025
+
+<img 
+  src="/journal_images/hacknroll2025.png" 
+  alt="Love Bets" 
+  className="max-w-xs w-full h-auto mx-auto"
+/>
+<br/>
+
+Returning with an additional year of experience and renewed perspective, my friend ([Ng Jun Wei](https://www.linkedin.com/in/jun-wei-ng-2b06b6251/)) and I participated in the next HackNRoll, hoping to reclaim lost glory. Again, we managed to imagine an idea we thought was crazy, stupid and just fun - which was exactly what the hackathon was about. So, having had more experience with web development projects, we built a web app targeted for mobile use called "LoveBets". 
+
+Although we did have some close calls towards the end trying to get some features up (in particular, charting on the app), this experience was a lot smoother and we managed to win a small prize (yay!). You can read more details [here](https://github.com/RyanTYT/Love-Bets).
+
+# Healthhack 2025
+
+<img 
+  src="/journal_images/pocketmissy.png" 
+  alt="Pocket Missy" 
+  className="max-w-md w-full h-auto mx-auto"
+/>
+<br/>
+
+Following our last win, my friend and I found more friends to do the inaugural Healthhack which had better prizes for the top teams. By this time, we were familiar enough with software development that coupled with the longer timeframe, encouraged us to explore building an actual mobile app with React Native. 
+
+Here, I actually learnt mobile app development and also a more grounded perspective on such hackathons. 
+
+There were a few tidbits that I found surprisingly familiar from my time at SAP doing frontend development - i18n files for international translation, components only accepting parameters for strings to display (i.e. not accepting "children" in the normal HTML sense that could include just plain strings). As my friend succintly put it - "God forbid you actually learnt something in your internship". Eventuall, we managed to win the best use of the Intersystems RAG Database which was pretty neat. 
+
+Check it out [here](https://github.com/awpbash/healthhack)!

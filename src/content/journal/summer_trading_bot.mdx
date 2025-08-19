@@ -1,0 +1,57 @@
+export const metadata = {
+    title: "Summer Trading",
+    date: "2025-07-18",
+    summary: "",
+    category: "personal-projects",
+    tags: ["personal project", "independent learning"],
+    readTime: "3",
+};
+
+After going for a few interviews for internships in 2025 (and failing them), I made the decision pretty early on that I would instead spend my time on building out this pet project of mine. The reason for the decision was two-fold. Some of the interviews actually pushed me to realise that projects like this where I feel like I could learn something interesting regularly is what I wanted to do long-term - if I don't end up doing this for my job, I would still spend a good portion of my free time looking at this anyway. Secondly, I always wanted to build a full-fledged trading bot for myself that I could use for my personal trades. The fact is that even if I didn't end up finding some interesting strategies that worked, I would still use the system to make limit buy orders close to the market/vwap price so that I didn't cross the spread every time I wanted to buy a stock.
+
+## Breaking things down
+
+Ultimately, I think it isn't too difficult to implement such a trading bot. The devil would more so be in the details and bugs. I had started work on this during the semester sitting through more boring lectures. This was my initial architecture design:
+
+[image]
+
+the trading app itself would then have the following tables:
+
+[image]
+
+to track positions over time and send orders that were accurate to the current positions.
+
+### Mini-challenge: Dynamic CRUD Models!
+
+I like giving myself mini-challenges for some problems that I feel is worth solving which is why in the process, I decided to try building a dynamic CRUD system for database models (the inspiration for this was from my time at SAP whereby SAP CAP had this inherently implemented). But I didn't want to build just any CRUD system that worked; I wanted a set of functions that were fully typed and also accepted new types for use with the CRUD system.
+
+To outline the problem succintly, I wanted to dynamically infer the type and attributes of the class passed as a parameter, then dynamically generate the required input and output types of each of the CRUD operations such that typing for each CRUD operation was strict. Through my earlier tries, I was able to create a class that could do so dynamically but only at runtime so there were no alarms raised by mypy nor auto-completions derived by my LSP. 
+
+It took me a while to finally settle on how to do it in Python with all this duck typing going on but the following was my most recent attempt and final implementation:
+
+- Have a python file solely for declarations of your (sqlalchemy) models with each column and type defined.
+- Create a separate Python file that reads the declarations in the first Python file and parse all the relevant types, defining the primary keys, and other keys in another file of typed dictionaries
+- Use the generated types as the argument to the generic function to make the dynamically generated CRUD models
+
+Let me know if I missed something or you thought of a much better way to complete this because I still find my "solution" rather unappealing since I eventually decided to just relegate the "dynamicism" to a separate runtime basically. 
+
+Unsurprisingly, this was a lot easier to do in Rust and it also exposed me to macros in Rust which I now love. If you haven't heard of macros in Rust, ["macros are a way of writing code that writes other code, which is known as metaprogramming"](https://doc.rust-lang.org/book/ch20-05-macros.html) and I feel immensely gratified whenever I write them. 
+
+Anyway, ignoring my newfound infatuation with macros, the generic implementation of this dynamic CRUD seems so simple comparatively
+
+- Building on how I implemented it in Python, I made a simple custom #[derive] macro that dynamically generated the primary key types and other key types at compile time
+- Then, an almost one-to-one copy of creating the generic CRUD model in Rust with the help of JSON (de-)serialisation
+
+I'm glossing over all the smaller struggles I had related to understanding lifetimes, borrowing and structs/traits/impl since it was my first time using Rust but overall, this was a fun and pretty simple challenge in Rust.
+
+### A minor extension - after some time
+
+So, if you've used rust before, there might be a key detail that stood out to you - the generic CRUD model uses JSON (de-)serialisation. This laziness did come back to bite me in the ass later on when i wanted extensions to the CRUD with compile-time checks via the sqlx query! macro. Thus, eventually, I used yet another proc macro to implement traits methods based on the attributes (the details of which were rather simple, just implementing functions to get the column names and bind the sqlx queries).
+
+### Broker Model
+
+I tried to define a more generic broker model that didn't rely solely on IBKR as there's always a chance I choose to port to a different broker but I defined a few main functions that I wanted such as get_current_price start_live_strategy, .... However, I don't believe there is much to say about how the rest of the project is built as I think the architecture diagram speaks for itself. A large portion of my summer, surprisingly, was spent reading academic papers and fixing up bugs along the way.
+
+You can take a look at the repo for the docker-compose and see for yourself how I built the system.
+
+<b>Find the project [here](https://github.com/RyanTYT/rusty_trader)</b>

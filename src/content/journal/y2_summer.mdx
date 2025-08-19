@@ -1,0 +1,39 @@
+export const metadata = {
+    title: "Y2 Summer - Internships and SAP",
+    date: "2025-07-18",
+    summary: "my thoughts on ATAP, internships and SAP",
+    category: "personal-projects",
+    tags: ["internships", "academics"],
+    readTime: "3",
+};
+
+My Summer at SAP (and the 3 months after) in 2024 saw me following along some projects at SAP that were mostly related to the implementation of project-specific AI models which is becoming a lot more widespread - I've heard about similar projects being made in other companies like GovTech now. My role officially is "AI Developer" but I leaned towards the frontend role which did eventually teach me a lot of things.
+
+# What SAP does
+
+If you're too lazy to search it up on Google and have never heard of this company before, SAP is an Enterprise Resource Planning corporation - which is a fancy way of saying they make it easier for companies to build out software tools for inventory management, scheduling, alerts and a bunch of other operational tools. In my time there, I worked with a team consisting of a mix of interns and employees focused on taking on relatively new projecs in the works for internal use at SAP. As such, I'm frankly not too sure how much I can share but I'll try my best :).
+
+# Projects
+
+During my time here, our team took on around two projects and my main role was as a frontend developer.
+
+Given my experience with web development during Orbital before and also fiddling around with React, I was confident that other web frameworks should not have been too dissimilar as to render my previous knowledge ineffectual. I was right up to the extent that javascript was the main language being used. Beyond that, the framework imposed by SAPUI5 encompassed many differences confused me along the way. These were just some:
+
+- Components couldn't accept strings as a component (as in HTML)
+- Workflow was strictly an MVC (Model View Controller) design whereby the Controller file was an SAPUI5 component that probably contained a "model" storing local data and "oDataModel" that interacted with SAP CAP
+- All text to be displayed on the webpage was stored in an i18n file for international translation
+- Even importing packages worked differently - you passed a string that defines a path to the file and use it as a parameter (see here for an example: https://sapui5.hana.ondemand.com/#/topic/8dbd35e1577b445d8077b2bc6ad8b958)
+- Debugging the importing of packages is honestly ridiculous in my opinion as simple mistakes like this should be made a lot more obvious via the typical mode of imports
+- No multiple inheritance - only singular inheritance along a long, long thin tree
+- Configuration of the routing and acceses were mushed into a manifest.json file
+- Debugging specifically the manifest.json file was a nightmare.
+
+In hindsight, some of these differences were just more closely linked to how a mobile application is developed while some really were just weird, weird quirks of the SAPUI5 ecosystem. The experiences I describe below is implicitly laden with the slow discovery of the above pointers.
+
+The first project was fairly functionally built from before we arrived and I was mostly tasked to integrate the frontend with the backend API service (they had previously been using static data). This should have been easy but the implied madatory use of only SAPUI5 and SAP CAP tools meant that any experience I had in web development for API calls wasn't very useful (not to mention SAPUI5 was in the midst of upgrading and releasing a new version of their API functionality and this new version is the 'default' API being used with certain other components). Sadly, with documentation being relatively scarce, even ChatGPT and their internal SAP forums were not of much help. I malded for a while combing through the documentation, forums and ChatGPT before realising I had access to other projects which already had integrated frontends and backends with the same technologies. The biggest mistake I made was in accepting that I should continue with the latest version of this API - the older version had very intuitively designed typical CRUD calls that were easy to make and follow. That ended up speeding up my progress with the project exponentially - a few CRUD calls to the backend and making sure everything was synced with the UI and the project was done within a week or two tops.
+
+The other project was more bare bones and I was tasked mainly to build out Figma desgns and the actual web application on the frontend. Here, I learned a lot more and familiarised myself significantly with the SAPUI5 ecosystem, finally understanding how to go about building components efficiently (with the SAPUI5 documentation always open in a tab) and understanding bugs that appear in the system more intimately. In fact, I familiarised myself so much that building the pages slowly but surely became more of a tedious task than an actual hurdle. Towards the end, we built a more interesting part of the project where I was exposed more to the LLM ecosystem, building the corresponding JSON structures for each of the different APIs that our system was supposed to integrate with. I will, however, concede that I made a rookie mistake trying to refactor long pieces of code to improve readability and git committed LOTS of files at once thinking it would help in the long-term (maybe it did but I will never know).
+
+# Time well spent?
+
+All in all, my time here exposed me to an actual working life of a developer (frontend and backend roles as the other interns worked on the backend and other systems) and honestly, primed me to pick up mobile development pretty easily for a later hackathon I participated in. My one gripe would be the role I chose. On one hand, we were unfortunately not too exposed to larger legacy systems and learning to read through code, understand and contribute to such large systems. On the other hand, I didn't feel too challenged in the role - not once was there a paricularly complex problem to solve nor were there particularly interesting ideas or concepts being explored - the closest being a Graph DB which the other interned shared with me but for which the implementation and understanding of it seemed simple enough to grasp. Ironically, I think this gave me a renewed hope of being in the course I am as I believe a research role is probably something I would be most interested in - analysing old or new data and extracting insights from it or optimising certain systems.

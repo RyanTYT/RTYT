@@ -1,0 +1,62 @@
+export const metadata = {
+    title: "Summer Trading - Research",
+    date: "2025-07-18",
+    summary: "Research",
+    category: "personal-projects",
+    tags: ["personal project", "independent learning"],
+    readTime: "3",
+};
+
+I spent a significant portion of summer reading through research papers. Some were really interesting while others were less so and even less so were papers that in my opinion, quite blatantly exploited certain issues related to this field of study - including selection bias, sampling bias and sometimes even measurement bias (which I feel is the most blatant and worst kind).
+
+# A Compilation of interesting research papers I came across
+
+<table className="w-full overflow-hidden">
+  <thead>
+      <tr className="px-3 py-2 text-left font-medium bg-gray-50 border-b border-slate-500">
+        <th>Papers</th>
+        <th className="px-3">Remarks</th>
+        <th className="min-w-25">My Rating</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr className="border-b">
+        <td className="py-3">[The Unintended Consequences of Rebalancing](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5122748) </td> 
+        <td className="px-3 py-3">Research seemed well thought out and there were many regressions done to extract potential new information at multiple junctures which gives confidence. https://www.quantitativo.com/p/the-unintended-consequences-of-rebalancing claims of maybe relatively uncorrelated returns to a mean-variance portfolio, which seems promising but the performance outside of the key high-variance periods definitely leaves a fair amount to be desired, especially when the recent drawback from the Trump announcements on tariffs also delivered a fair hit to the strategy - though this could likely point to the strategy performing better during periods where the switches regimes on a large timeframe (). The worse performance in 2025 also doesn't provide a favourable first impression.</td>
+        <td className="px-3 py-3 justify-center">8/10</td>
+      </tr>
+      <tr className="border-b">
+        <td className="py-3">[PreTRA](https://chenwang.one/files/pretra.pdf)</td> 
+        <td className="px-3 py-3">Research topic seemed interesting. Uncertainty resolution seemed like a possible sufficient reason to understand the phenomenon but definitely feels a little sus/werid given only 4 data points each year, but statistical significance provides assurance. In particular, performance in recent time since release could be decayed due to public information release? although an adjusted strategy seems to perform well in recent years, there doesn't seem to be enough data to fully support the new hypothesis. </td>
+        <td className="px-3 py-3 justify-center">7/10</td>
+      </tr>
+      <tr className="border-b">
+        <td className="py-3">[Andrew Aziz, Momentum](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4824172)</td> 
+        <td className="px-3 py-3">Seems interesting and backtests look promising, although strategy seems a little simple to implement. </td>
+        <td className="px-3 py-3 justify-center">7/10</td>
+      </tr>
+      <tr className="border-b">
+        <td className="py-3">[Andrew Aziz, Momentum, Decile Portfolios](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4729284)</td> 
+        <td className="px-3 py-3">Results seem interesting, but unsure of practical implementation of custom scanners that would be latent enough for this kind of strategy (if you know of an efficient means of doing so, please let me know) - this also comes from a position whereby I have seen a number of papers implement similar decile portfolios and they mostly seem to have very good results (which makes me suspicious of whether these are truly exploitable in reality)</td>
+        <td className="px-3 py-3 justify-center">6/10</td>
+      </tr>
+      <tr className="border-b">
+        <td className="py-3">[Analytic solution for optimal Stat Arb](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1505073)</td> 
+        <td className="px-3 py-3">Really interesting dated paper that discusses how to best take advantage of a stationary time series of prices, really opened my eyes to the applicability of ARMA/ARCH/GARCH models </td>
+        <td className="px-3 py-3 justify-center">8/10</td>
+      </tr>
+      <tr className="border-b">
+        <td className="py-3">[School Holidays and Stock Market Seasonality](https://www.insead.edu/sites/insead/files/assets/faculty-personal-site/lily-hua-fang/documents/School%20Holidays%20and%20Market%20Return%20Seasonality%20_2017Revision_v7.pdf)</td> 
+        <td className="px-3 py-3">Although returns are decaying over time for these, the previously abnormal excess returns are an interesting phenomenon to study and provides some inspiration as a foundation to ponder upon </td>
+        <td className="px-3 py-3 justify-center">8/10</td>
+      </tr>
+      <tr className="border-b">
+        <td className="py-3">[The Halloween Indicator](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2154873) </td> 
+        <td className="px-3 py-3">Another interesting calendar anomaly</td>
+        <td className="px-3 py-3 justify-center">8/10</td>
+      </tr>
+  </tbody>
+</table>
+
+<br/>
+<b>Find the project [here](https://github.com/RyanTYT/rusty_trader)</b>

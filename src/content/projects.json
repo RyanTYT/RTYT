@@ -1,0 +1,101 @@
+[
+    {
+        "id": "trading-bot",
+        "title": "Trading Bot",
+        "description":
+            "Full-stack trading bot with real-time data processing and order management system built during summer break.",
+        "type": "Personal Project",
+        "duration": "3 months",
+        "status": "Ongoing",
+        "link": "https://github.com/RyanTYT/rusty_trader",
+        "tech": [
+            "Rust",
+            "Tokio",
+            "Tauri",
+            "Python",
+            "Docker",
+            "PostgreSQL",
+            "IBKR"
+        ],
+        "details": {
+            "overview":
+                "Built a trading system from scratch, focusing on robust architecture for easy interpretability of strategies employed.",
+            "architecture": [
+                "Docker-Compose containers",
+                "Centralised Real-time Data from IBKR API",
+                "Centralised Order Management System across strategies for limit/market orders",
+                "PostgreSQL for trade history and analytics"
+            ],
+            "technical": [
+                "Real-time portfolio monitoring dashboard",
+                "Automated trade executions",
+                "Comprehensive logging and monitoring system"
+            ],
+            "research": [
+                "Momentum and mean reversion strategies",
+                "Calendar Anomalies",
+                "Statistical Arbitrage",
+                "Factor Models",
+                "Risk-adjusted performance metrics"
+            ],
+            "results": [
+                "Built comprehensive performance analytics dashboard",
+                "Currently Paper Trading 3 different trading strategies"
+            ]
+        }
+    },
+    {
+        "id": "sap-ai",
+        "title": "SAP AI Development",
+        "description":
+            "Frontend and backend development for AI-powered business applications using Large Language Models.",
+        "type": "Internship",
+        "duration": "6 months",
+        "status": "Professional Experience",
+        "tech": ["SAPUI5", "SAP CAP", "LLMs", "API Integration"],
+        "details": {
+            "overview":
+                "Developed user interfaces and backend services for AI applications in enterprise environment.",
+            "architecture": [
+                "MVC architecture with SAPUI5 for frontend pages",
+                "SAP CAP for backend services",
+                "LLM integration and prompt engineering"
+            ],
+            "technical": [
+                "Built responsive SAPUI5 components and extended with HTML",
+                "Implemented API endpoints for LLM interactions",
+                "Designed user-friendly interfaces for complex AI features",
+                "Collaborated with cross-functional teams"
+            ],
+            "research": [
+                "LLM prompt optimization techniques - Few-shot, Chain-of-thought, ...",
+                "API design patterns for AI services"
+            ],
+            "results": [
+                "Built the main User Interface for the 2 Projects",
+                "Gained enterprise software development experience for SAPUI5 and SAP CAP",
+                "Contributed to team knowledge sharing"
+            ]
+        }
+    },
+    {
+        "id": "academic-projects",
+        "title": "Academic Projects",
+        "description":
+            "Various projects from Business Analytics coursework including data analysis and modeling.",
+        "type": "Academic",
+        "duration": "Ongoing",
+        "status": "In Progress",
+        "tech": ["Python", "R", "SQL", "Excel", "Tableau"],
+        "details": {
+            "overview":
+                "Collection of academic projects demonstrating analytical and technical skills.",
+            "projects": [
+                "Financial modeling and forecasting",
+                "Statistical analysis of market data",
+                "Data visualization and dashboard creation",
+                "Machine learning applications in finance"
+            ]
+        }
+    }
+];

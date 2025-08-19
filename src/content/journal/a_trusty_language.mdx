@@ -1,0 +1,27 @@
+export const metadata = {
+    title: "A tRusty Language",
+    date: "2025-07-18",
+    summary: "my introduction to the six/eight-legged sea creature everything keeps evolving to, it's pincers and steadiness",
+    category: "learning-discovery",
+    tags: ["programming languages", "personal project", "independent learning"],
+    readTime: "3",
+};
+
+## Why I even interfaced with Rust in the first place
+This post is also related to the trading bot I built so you can get more context from that. To sum it up, I wanted an app that would function as both a mobile app and a desktop app for my personal use to monitor the activities of my trading bot but I had the following requirements:
+
+- Has to be relatively un-bloated so that it doesn't drain my battery or resources + I don't have that much space on my laptop or my device
+- Ideally, one repo is able to compile for both the desktop app and mobile app
+
+These requirements would point to the use of either Electron or Tauri. Tauri is the hot new kid on the block with a relatively small bundle size because it uses the device's native webview and Electron was the veteran that was growing old and made pretty resource intensive apps from what I had read online. So, although it might have been easier to build an electron app, I opted to learn some Rust and build out my dream app. Honestly, this was a pretty mild introduction to rust - all I had to know was how to define a function and add a "#[tauri:command]" on top of it and luckily, everything compiles just fine. 
+
+The two areas where I got a lot more experience with rust was building the backend of the user interface and the actual trading bot. The backend more so gave me experience woring with procedural macros for and serde-json serialisation and de-serialisation for the first time. There were still a few things I didn't quite understand fully (like why I wouldn't just accept a reference as an argument always, ...) but I understood enough for the application to compile properly within about a week (nice). Then, building the actual trading bot opened me up further to multithreading, asynchronous work, borrowing, lifetimes, mutexes and the such.
+
+## Asynchronous Programming / Multithreading
+The overall concept of the bot was simple - have 2 main threads, one to handle orders and one to handle market data. The issue, however, was that the client was fully synchronous and tokio was asynchronous and handled it's own runtime. So, if I had tokio threads dedicated to listening for synchronous data, they would completely stall the runtime (this took me a very uninformative bug to realise). However, if I made a new OS kernel thread, the functions called within them cannot be async unless I spun up a new tokio runtime. Channels in rust fortunately made this trivial - I just had to set up an async channel, clone the sender in the new thread and send the required data back to the tokio runtime when new data was received. 
+
+## Lifetimes
+With this came naturally 'lifetimes' for memory safety. Cloning is your best friend here but I couldn't clone the Client instance (great 🫠). Luckily, the docs provided examples of using Arc (which is basically a shared pointer) allowing me to clone the reference rather than the instance itself. 
+
+## Conclusion
+Overall, there were many annoyances along the way which elucidated the importance of various structures such as Mutexes to prevent race conditions (+ how it can make an asynchronous application basically synchronous if you don't take note of that) and how best to manage the code to acquire the lock for the shortest time possible and tokio channels which I extensively used to centralise functionalities (like logging or database operations). In hindsight, surprisingly, Rust feels like it should have been an easy language to learn if you already understood mutexes, shared pointers, async and threading (but also serves as a great teacher if you didn't know these beforehand!).

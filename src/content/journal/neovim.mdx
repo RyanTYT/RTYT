@@ -1,0 +1,51 @@
+export const metadata = {
+    title: "Neovim Adventures",
+    date: "2025-07-18",
+    summary: "Why, WHY subject yourself to this TORTURE??",
+    category: "tools-workflow",
+    tags: ["IDE", "neovim", "independent learning", "personal project", "personal opinions"],
+    readTime: "3",
+};
+
+Before NUS, I only learnt Python and used PyCharm and Sublime Text - PyCharm for the auto-completions and Sublime Text when I just wanted to quickly edit some files. 
+
+# VSCode, Sublime Text, Neovim
+
+CS2030 (Programming Methodology II) - My first real exposure to Vi/Vim. Honestly, the only real way I could use Vim initially was with a physical cheatsheet of shortcuts (and LOTS of using my mouse to scroll LOL). This was also my first exposure to an actual programming course and so, I didn't have a general workflow lined up for me; I was still looking around for an IDE that could parse and understand a wide array of languages. "VSCode!!" is what you may be screaming, which I had heard of but was utterly confused about - is it "VSCode", "VSCode Studio", "Visual Studio" or some other variation that I needed to use - and for which the battery-draining usage was also off-putting (I had used IntelliJ and PyCharm by then and they felt like sailing in a 50-foot cruise ship to cross the pond).
+
+At the same time, I was exposed to "The Primeagen" who strongly advocated for "Neovim" and some of his showcases was when I realised I wanted to learn how to use it properly - in the span of a Youtube Short, he created a macro, executed it and swiftly did something that was usually tedious and repeatable about 10 times. It felt like coding to code and god damn, did I eat that up. Then, I proceeded to bury down the rabbit hole to build my own personal Neovim configuration.
+
+All this to say that I like coding and I like coding to code Just as much.
+
+# The Journey
+
+Since then, I've been using Neovim as my IDE and I can honestly say, although there are peaks and troughs using it, the whole experience has been an invaluable learning journey. There are so many things in a modern IDE that we take for granted - so much so that I could never imagine myself discovering some things without using Neovim. 
+
+## Programming Language Detection
+
+This may seem obvious but IDEs generally detect the language being used via the file extension. Genius, I know right. Alright, but let's move on to more interesting ones.
+
+## Language Servers
+
+In VSCode, it's a pre-built gun. In Neovim, it's a stripped down gun with the trigger, chamber, muzzel all given disassembled. With that, you get to understand that typically, a server is spun up that attaches to the current working file if the file extension matches. Then, it tracks every key you press, knows the functions and classes defined and suggests the next most likely completion target. In fact, in Neovim, you can even set the priority level of a completion - to complete a function, a module, a co-pilot suggestion, .... COOL and something that I would never have known nor bothered to think about had I never used Neovim - honestly, before this, I also didn't think code was fast/optimised enough to make all these operations so quickly and it kind of blew my mind in that way too.
+
+This also alludes to there being different servers that parse configuration files in the root directory and how they parse them differently. Also, I just wanted to note how genuinely surprising it is to realise how many 
+
+## Virtual Environments
+
+I have to concede that early on, I had not idea nor concept of what virtual environments were. Take a look at __ to see what I mean - i was basically installing all packages I needed into the global environment and this completely contaminated every python instance I had (the native python on Mac, the python I installed via brew, and any other installations via pyenv). At some point, I went through venv hell trying to deconflict all the environments and set the right python version for use. Eventually tho, I upgraded my laptop and restarted my environment from scratch so that I never had to go thru that agn - and neovim helped me to fully understand wat that meant - a local environment that is in the root of the folder or pointed to by the config file to tie it to the project, particularly useful for auto-completion as well
+
+## Miscellaneous
+
+There are a multitude of other things u can configure in neovim although these were more so interesting than something I learnt along the way
+
+
+### Random heeha things
+
+- You can ssh into a terminal with Neovim set up and u can get the full benefit of a full-fledged IDE from an ssh session 🤯. |
+- You can super easily define shortcuts of your own compared to on VSCode where u need to learn, rather than define ur own shortcuts. |
+- Macros can be so useful in niche situations u'll feel so contented. |
+- screen splitting / finding files is so easy with the shortcuts |
+
+Note: If you also want to get into Neovim, I recommend LazyVim with lazy loading - start up is so much faster and more efficient
+also I heard nvchad has everything required to start up so there's that

@@ -1,0 +1,286 @@
+[
+	{
+		"id": 1,
+		"title": "Why I Started Journaling My Thoughts",
+		"category": "reflections",
+		"excerpt":
+			"Reflecting on the value of documenting my learning journey and thought processes...",
+		"date": "2024-07-15",
+		"readTime": 5,
+		"tags": ["personal", "growth", "documentation"],
+		"content": `# Why I Started Journaling My Thoughts
+
+I've been thinking about this for a while now - should I be documenting my thoughts and experiences more systematically? The answer, I've realized, is a resounding yes.
+
+## The Catalyst
+
+Working on my trading bot over the summer made me realize how much I was learning, but also how quickly I was forgetting the smaller insights and decision-making processes. I'd solve a problem, move on to the next one, and then weeks later struggle to remember exactly why I made certain architectural choices.
+
+## What I Hope to Achieve
+
+This journal isn't just about showcasing projects (though that's part of it). It's about:
+
+- **Process Documentation**: How I approach problems, what I try first, what fails, what works
+- **Learning Reflections**: Making sense of new concepts and connecting them to what I already know
+- **Career Thoughts**: Processing experiences from internships, coursework, and personal projects
+- **Technical Deep Dives**: Exploring tools, frameworks, and methodologies that interest me
+
+## The Format
+
+I'm keeping this informal but structured. Each post will focus on a specific topic or experience, with enough detail to be useful to future me (and hopefully others) but not so much that it becomes a chore to write.
+
+Looking forward to seeing how this evolves.`,
+	},
+	{
+		"id": 2,
+		"title": "Setting Up Neovim for Financial Data Analysis",
+		"category": "tools-workflow",
+		"excerpt":
+			"My journey from VS Code to Neovim and how it improved my productivity when working with large datasets...",
+		"date": "2024-07-10",
+		"readTime": 8,
+		"tags": ["neovim", "productivity", "data-analysis", "vim"],
+		"content": `# Setting Up Neovim for Financial Data Analysis
+
+Making the switch from VS Code to Neovim was one of those decisions that seemed unnecessarily complicated at first but ended up being incredibly rewarding.
+
+## The Motivation
+
+When I started working on my trading bot, I found myself constantly switching between different files, running tests, checking logs, and analyzing data. VS Code felt... heavy. The constant mouse usage was slowing me down, and I kept thinking there had to be a better way.
+
+## The Learning Curve
+
+I won't lie - the first week was brutal. Simple tasks that took seconds in VS Code suddenly required looking up key combinations. But there was something addictive about the efficiency once you got the hang of it.
+
+### Key Plugins That Changed Everything
+
+\`\`\`lua
+-- Essential for Python data analysis
+use 'nvim-treesitter/nvim-treesitter'
+use 'neovim/nvim-lspconfig'
+use 'hrsh7th/nvim-cmp'
+
+-- For working with CSV files and data
+use 'mechatroner/rainbow_csv'
+use 'chrisbra/csv.vim'
+\`\`\`
+
+## The Workflow
+
+Now my typical analysis session looks like:
+1. \`:terminal\` to open integrated terminal
+2. Split windows for code, tests, and data exploration
+3. Quick file navigation with telescope
+4. Real-time syntax checking for Python/SQL
+
+## Impact on My Trading Bot Project
+
+The efficiency gains were most noticeable when debugging trading strategies. Being able to quickly jump between:
+- Strategy implementation
+- Backtest results
+- Log files
+- Data validation scripts
+
+All without leaving the keyboard made iterations much faster.
+
+## Would I Recommend It?
+
+For anyone doing serious development work, especially with data analysis, absolutely. The initial investment in learning pays dividends in long-term productivity.
+
+Next "up": exploring vim motions for faster code navigation.`,
+	},
+	{
+		"id": 3,
+		"title": "Building a Risk Management "System": Lessons from Failure",
+		"category": "building-systems",
+		"excerpt":
+			"How my first attempt at implementing risk controls almost destroyed my backtesting results...",
+		"date": "2024-07-05",
+		"readTime": 12,
+		"tags": ["risk-management", "trading", "systems", "failure", "learning"],
+		"content": `# Building a Risk Management "System": Lessons from Failure
+
+Risk management in trading systems is one of those things that sounds straightforward in theory but becomes incredibly complex in practice. Here's how I learned that the hard way.
+
+## The Initial Approach
+
+My first risk management system was embarrassingly simple:
+- Don't risk more than 2% per trade
+- Stop trading if daily loss exceeds 5%
+- Maximum 3 concurrent positions
+
+Seemed reasonable, right? Wrong.
+
+## What Went Wrong
+
+### Problem "1": Position Sizing Logic
+\`\`\`python
+# My naive approach
+position_size = account_balance * 0.02 / stop_loss_distance
+
+# What I should have considered
+position_size = calculate_kelly_optimal_size(
+    win_rate, avg_win, avg_loss, account_balance
+)
+\`\`\`
+
+The fixed 2% rule ignored the probability distributions of my strategies. Some strategies had higher win rates with smaller average wins - they could handle larger position sizes. Others needed much more conservative sizing.
+
+### Problem "2": Correlation Blindness
+
+My "maximum 3 positions" rule fell apart when all three positions were highly correlated. During market stress, they all moved against me simultaneously, effectively concentrating risk rather than diversifying it.
+
+### Problem "3": Dynamic Risk Adjustment
+
+The system had no mechanism to adjust risk based on:
+- Market volatility regimes
+- Strategy performance over time
+- Portfolio heat (unrealized losses)
+
+## The Rebuild
+
+Version 2.0 incorporated:
+
+### Volatility-Adjusted Position Sizing
+\`\`\`python
+def calculate_position_size(strategy_stats, current_volatility):
+    base_size = kelly_fraction(strategy_stats)
+    vol_adjustment = reference_vol / current_volatility
+    return base_size * vol_adjustment * volatility_scalar
+\`\`\`
+
+### Correlation-Aware Portfolio Limits
+Instead of counting positions, I started tracking portfolio-level risk:
+- Maximum portfolio "heat": 8%
+- Correlation-adjusted position limits
+- Sector/asset class concentration limits
+
+### Dynamic Risk Scaling
+Risk allocation now adjusts based on:
+- Recent strategy performance
+- Market regime detection
+- Portfolio-level metrics
+
+## Testing the New System
+
+Backtesting showed dramatic improvements:
+- 40% reduction in maximum drawdown
+- Better risk-adjusted returns
+- More stable performance across different market conditions
+
+## Key Lessons
+
+1. **Risk management is a system, not a set of rules**
+2. **Failed trades teach more than successful ones**
+3. **Backtesting risk systems is as important as backtesting strategies**
+4. **Complexity has diminishing returns - find the right balance**
+
+The most important "realization": good risk management isn't about avoiding losses - it's about making them manageable and informative.
+
+Currently working on version 3.0 with machine learning-based regime detection. More on that soon.`,
+	},
+	{
+		"id": 4,
+		"title": "Lessons from My SAP "Internship": Working with LLMs in Production",
+		"category": "learning-discovery",
+		"excerpt":
+			"What I learned about building user-facing AI applications during my summer at SAP...",
+		"date": "2024-06-20",
+		"readTime": 10,
+		"tags": ["sap", "internship", "llms", "production", "ai", "frontend"],
+		"content": `# Lessons from My SAP "Internship": Working with LLMs in Production
+
+My Y2 summer internship at SAP was my first real exposure to building AI applications that actual users would interact with. Here's what I learned about the gap between AI demos and production systems.
+
+## The Project Context
+
+I was working on a team building internal tools that leveraged Large Language Models for business process automation. My role was split between frontend development (React/TypeScript) and backend API integration.
+
+## Lesson "1": LLMs Are Powerful But Unreliable
+
+In demos, LLMs seem magical. In production, they're more like brilliant but unpredictable colleagues.
+
+### The Challenge
+\`\`\`javascript
+// This works great in demos
+const response = await llm.generate(userQuery);
+return response.content;
+
+// This is what you actually need in production
+const response = await llm.generate(userQuery);
+const validated = await validateResponse(response);
+const sanitized = sanitizeOutput(validated);
+const fallback = validated.confidence > 0.8 ? sanitized : getDefaultResponse();
+return fallback;
+\`\`\`
+
+## Lesson "2": User Experience is Everything
+
+The technical implementation was only half the challenge. Making LLM interactions feel natural and trustworthy required careful UX design.
+
+### What We Learned
+- Users need to understand what the AI is doing
+- Loading states become crucial (LLMs can be slow)
+- Error handling needs to be graceful and informative
+- Confidence indicators help users trust the system
+
+## Lesson "3": Prompt Engineering is Software Engineering
+
+Writing prompts isn't just about getting the right output - it's about creating maintainable, testable systems.
+
+### Our Approach
+\`\`\`python
+class PromptTemplate:
+    def __init__(self, template, validators):
+        self.template = template
+        self.validators = validators
+    
+    def generate(self, context):
+        prompt = self.template.format(**context)
+        return self.validate_and_execute(prompt)
+\`\`\`
+
+We treated prompts like "code": version controlled, tested, and reviewed.
+
+## Lesson "4": The Importance of Observability
+
+When your system includes an LLM, debugging becomes much more complex. You need to understand not just what went wrong, but why the AI made certain decisions.
+
+### Our Monitoring Stack
+- Request/response logging with full context
+- Performance metrics (latency, token usage)
+- Quality metrics (user satisfaction, accuracy)
+- Cost tracking (API usage can get expensive)
+
+## Lesson "5": Business Context Matters
+
+The most technically impressive solution isn't always the right one. Understanding the business problem deeply was crucial for building something actually useful.
+
+### Key Questions We Learned to Ask
+- What's the user's actual workflow?
+- How does this integrate with existing systems?
+- What happens when the AI is wrong?
+- How do we measure success?
+
+## Impact on My Technical Growth
+
+This internship changed how I think about software development:
+- **User-centered design**: Technical elegance means nothing if users don't find it valuable
+- **System thinking**: AI applications are systems, not just models
+- **Production mindset**: Demo-driven development doesn't prepare you for real-world complexity
+
+## Applying These Lessons
+
+These insights heavily influenced my approach to the trading bot project:
+- Built comprehensive logging from day one
+- Focused on error handling and edge cases
+- Designed for maintainability, not just functionality
+- Constantly validated assumptions with data
+
+## Looking Forward
+
+The experience convinced me that the most interesting problems in AI aren't just technical - they're about building reliable, useful systems that people actually want to use.
+
+Next "post": How I applied these lessons to my trading bot architecture.`,
+	},
+];
