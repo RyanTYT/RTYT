@@ -1,9 +1,9 @@
 "use client";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { SocialLinksNav } from "@/components/home/common";
 import { Container } from "@/components/home/base";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { createStyles } from "@/app/theme";
 import Link from "next/link";
 
@@ -73,6 +73,7 @@ export default function Navbar({
 		},
 		{ href: "https://github.com/RyanTYT", icon: Github, label: "GitHub" },
 	];
+	const [isOpen, setIsOpen] = useState(false);
 
 	return (
 		<>
@@ -98,6 +99,56 @@ export default function Navbar({
 							})}
 						</div>
 						<SocialLinksNav links={socialLinks} />
+						{/* Mobile toggle button */}
+						<button
+							className="md:hidden p-2 text-slate-900"
+							style={{ cursor: "pointer" }}
+							onClick={() => setIsOpen(!isOpen)}
+						>
+							{isOpen ? <X size={24} /> : <Menu size={24} />}
+						</button>
+					</div>
+					{/* Mobile nav dropdown */}
+					{/*isOpen && (
+						<div className="mt-4 flex flex-col space-y-4 md:hidden">
+							{routes.map((route) => (
+								<div onClick={() => setIsOpen(false)} key={route.link}>
+									<NavLink
+										href={route.link}
+										active={
+											pathName === route.link ||
+											(pathName === "/" && route.label === "Home")
+										}
+										key={route.link}
+									>
+										{route.label}
+									</NavLink>
+								</div>
+							))}
+						</div>
+					)*/}
+					{/* Mobile nav dropdown with animation */}
+					<div
+						className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+							isOpen ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
+						}`}
+					>
+						<div className="flex flex-col space-y-4">
+							{routes.map((route) => (
+								<div onClick={() => setIsOpen(false)} key={route.link}>
+									<NavLink
+										href={route.link}
+										active={
+											pathName === route.link ||
+											(pathName === "/" && route.label === "Home")
+										}
+										key={route.link}
+									>
+										{route.label}
+									</NavLink>
+								</div>
+							))}
+						</div>
 					</div>
 				</Container>
 			</Navigation>
