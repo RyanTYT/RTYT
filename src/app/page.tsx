@@ -111,9 +111,10 @@ const Portfolio = () => {
 				<Container>
 					<Grid cols="twoLg" className="items-center">
 						<div>
-							<StatusBadge Icon={TrendingUp} className="mb-6">
+                        {/*<StatusBadge Icon={TrendingUp} className="mb-6">
 								Seeking Quantitative Finance Opportunities
 							</StatusBadge>
+                            */}
 
 							<Heading level={1}>Hi, I&apos;m Ryan!</Heading>
 
@@ -156,7 +157,7 @@ const Portfolio = () => {
 								</div>
 								<div className="grid grid-cols-2 gap-4">
 									<MetricCard
-										value="Y3"
+										value="Y4"
 										label="Current Year"
 										Icon={TrendingUp}
 									/>
@@ -165,11 +166,6 @@ const Portfolio = () => {
 										value="Full-Stack"
 										label="Trading Bot"
 										Icon={Code2}
-									/>
-									<MetricCard
-										value="Docker"
-										label="Deployment"
-										Icon={Database}
 									/>
 								</div>
 							</Card>
