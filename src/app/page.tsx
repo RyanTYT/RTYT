@@ -131,7 +131,7 @@ const Portfolio = () => {
                                   </Button>
                                 </Link>
 								<a 
-                                  href="/resume/resume.pdf" 
+                                  href="/RTYT/resume/resume.pdf" 
                                   download 
                                   className="inline-block"
                                 >
