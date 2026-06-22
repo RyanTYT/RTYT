@@ -201,7 +201,7 @@ export function buildPages(deps: PageDataDeps): Record<string, string> {
   // Contact & resume from JSON data
   const c = deps.contact;
   pages['contact'] = `<div class="md-h1">Contact</div><hr class="md-divider"><div class="md-pre"><code><span class="fn">email</span>    ${c.email}\n<span class="fn">github</span>   ${c.github}\n<span class="fn">phone</span>    ${c.phone}\n<span class="fn">status</span>   <span class="st">${c.status}</span></code></div>`;
-  pages['resume'] = `<div class="md-p" style="margin-top:20px"><span style="color:var(--pine)">$ open resume.pdf</span></div><div style="margin-top:10px;padding:16px;border:1px solid var(--hm);border-radius:6px;background:var(--o)"><div style="color:var(--gold)">📄 resume.pdf</div><a class="md-link" href="${import.meta.env.BASE_URL}/${c.resume_url}" target="_blank">${c.resume_url.replace('https://', '')}</a></div>`;
+  pages['resume'] = `<div class="md-p" style="margin-top:20px"><span style="color:var(--pine)">$ open resume.pdf</span></div><div style="margin-top:10px;padding:16px;border:1px solid var(--hm);border-radius:6px;background:var(--o)"><div style="color:var(--gold)">📄 resume.pdf</div><a class="md-link" href="${c.resume_url}" target="_blank">${c.resume_url.replace('https://', '')}</a></div>`;
 
   pages['readme'] = `<div class="md-h1">${deps.personal_info.name}</div>
 <div class="md-badge-row"><span class="md-badge bd-r">Rust</span><span class="md-badge bd-p">Python</span><span class="md-badge bd-pg">PostgreSQL</span><span class="md-badge bd-i">IBKR</span><span class="md-badge bd-a">LLMs</span></div>
