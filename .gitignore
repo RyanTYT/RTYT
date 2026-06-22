@@ -1,5 +1,4 @@
 .astro
-astro.config.mjs
 dist
 fix-markdown-rendering.sh
 node_modules
