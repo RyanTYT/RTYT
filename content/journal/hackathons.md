@@ -22,11 +22,7 @@ If you wanna check out this extension for fun, [here you go](https://github.com/
 
 # HackNRoll 2025
 
-<img 
-  src="/RTYT/journal_images/hacknroll2025.png" 
-  alt="Love Bets" 
-  className="max-w-xs w-full h-auto mx-auto"
-/>
+<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;"><img src="/RTYT/journal_images/hacknroll2025.png" alt="LoveBets (HackNRoll 2025)" style="width:20rem;"/></div>
 <br/>
 
 Returning with an additional year of experience and renewed perspective, my friend ([Ng Jun Wei](https://www.linkedin.com/in/jun-wei-ng-2b06b6251/)) and I participated in the next HackNRoll, hoping to reclaim lost glory. Again, we managed to imagine an idea we thought was crazy, stupid and just fun - which was exactly what the hackathon was about. So, having had more experience with web development projects, we built a web app targeted for mobile use called "LoveBets". 
@@ -35,16 +31,21 @@ Although we did have some close calls towards the end trying to get some feature
 
 # Healthhack 2025
 
-<img 
-  src="/RTYT/journal_images/pocketmissy.png" 
-  alt="Pocket Missy" 
-  className="max-w-md w-full h-auto mx-auto"
-/>
+<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;"><img src="/RTYT/healthhack/pocketmissy.png" alt="Pocket Missy" style="width:30rem;"/></div>
 <br/>
 
 Following our last win, my friend and I found more friends to do the inaugural Healthhack which had better prizes for the top teams. By this time, we were familiar enough with software development that coupled with the longer timeframe, encouraged us to explore building an actual mobile app with React Native. 
 
 Here, I actually learnt mobile app development and also a more grounded perspective on such hackathons. 
+
+Here is the tech stack we used:
+<img src="/RTYT/healthhack/tech stackv2.png" alt="Pocket Missy Tech Stack" style="width:5rem;"/>
+
+Here is the architecture of the application we developed:
+<img src="/RTYT/healthhack/Architecturev2.jpg" alt="Pocket Missy Architecture" style="width:50rem;"/>
+
+Finally, a small demo:
+<img src="/RTYT/healthhack/logs_demo.gif" alt="Pocket Missy" style="width:40rem;"/>
 
 There were a few tidbits that I found surprisingly familiar from my time at SAP doing frontend development - i18n files for international translation, components only accepting parameters for strings to display (i.e. not accepting "children" in the normal HTML sense that could include just plain strings). As my friend succintly put it - "God forbid you actually learnt something in your internship". Eventuall, we managed to win the best use of the Intersystems RAG Database which was pretty neat. 
 

@@ -17,34 +17,37 @@ This software development project was the first trial by fire project I had the 
 
 Anyway, such a mentor does come with pros and cons. With little help, you do tend to grow faster to accomodate. In the end, in order to survive and make progress fast enough (when I'm mostly carrying), I had to learn a lot really quickly in many areas at once - UI design, frontend React components (useEffect, useState, refreshing components properly, ...), Routing, Project Structure Setup, Deployment, Backend server routing, Backend middleware routing, Testing, ..., (i don't know, is that enough?). Of course, I learnt all this at the point when LLMs were probably at their infancy, just hitting mainstream popularity so I did not have the benefit of asking ChatGPT for every stray, niche issue I was facing - so this was as wild a ride you could imagine. Granted though - this did feel like the last point in my university life that I ever had to face such difficulty searching desperately and looking through documentations thoroughly for an answer; now, for every niche problem I face, ChatGPT/Claude/Gemini provide really good answers with links directly to others who faced the same issue 10 years ago without LLMs.
 
-So, here you go, a picture of the frontend:
+So, here you go, some picture of the frontend:
 
-<div>
-<img 
-  src="/RTYT/orbital-photos/landing-dark.png" 
-  alt="Landing Page in Dark Mode" 
-  className="max-w-xs w-full h-auto mx-auto"
-/>
-<img 
-  src="/RTYT/orbital-photos/settings-dark.png" 
-  alt="Settings Page in Dark Mode" 
-  className="max-w-xs w-full h-auto mx-auto"
-/>
-<img 
-  src="/RTYT/orbital-photos/timetable-dark.png" 
-  alt="Timetable Page in Dark Mode" 
-  className="max-w-xs w-full h-auto mx-auto"
-/>
-<img 
-  src="/RTYT/orbital-photos/timetable-light.png" 
-  alt="Timetable Page in Dark Mode" 
-  className="max-w-xs w-full h-auto mx-auto"
-/>
-<img 
-  src="/RTYT/orbital-photos/login-animation.mov" 
-  alt="Login Animation!! (took a while to build from scratch)" 
-  className="max-w-xs w-full h-auto mx-auto"
-/>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; padding: 16px;font-family: sans-serif;">
+
+  <div style="background: #18181b; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="/RTYT/orbital-photos/landing-dark.png" alt="Landing Page in Dark Mode" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain;" />
+    <span style="color: #a1a1aa; font-size: 14px; margin-top: 12px;">Landing Page (Dark)</span>
+  </div>
+
+  <div style="background: #18181b; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="/RTYT/orbital-photos/settings-dark.png" alt="Settings Page in Dark Mode" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain;" />
+    <span style="color: #a1a1aa; font-size: 14px; margin-top: 12px;">Settings Page (Dark)</span>
+  </div>
+
+  <div style="background: #18181b; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <img src="/RTYT/orbital-photos/timetable-dark.png" alt="Timetable Page in Dark Mode" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain;" />
+    <span style="color: #a1a1aa; font-size: 14px; margin-top: 12px;">Timetable (Dark)</span>
+  </div>
+
+  <div style="background: #f4f4f5; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e4e4e7;">
+    <img src="/RTYT/orbital-photos/timetable-light.png" alt="Timetable Page in Light Mode" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain;" />
+    <span style="color: #71717a; font-size: 14px; margin-top: 12px;">Timetable (Light)</span>
+  </div>
+
+  <div style="background: #18181b; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <video src="/RTYT/orbital-photos/login-animation.mov" style="width: 100%; height: auto; border-radius: 8px; object-fit: contain;" autoplay loop muted playsinline></video>
+    <span style="color: #a1a1aa; font-size: 14px; margin-top: 12px; text-align: center; font-weight: 500;">
+      ✨ Login Animation (Built from scratch!)
+    </span>
+  </div>
+
 </div>
 
 
