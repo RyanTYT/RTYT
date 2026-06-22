@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import TimelineApp from '../components/TimelineApp';
+
+// Load courses CSV at build time
+import coursesRaw from '../../content/courses.csv?raw';
+---
+
+<Base title="Ryan Tan — Academic Journey">
+  <TimelineApp client:only="react" coursesRaw={coursesRaw} />
+</Base>

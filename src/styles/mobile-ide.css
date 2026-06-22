@@ -1,0 +1,101 @@
+/* ═══ MOBILE: IDE (tree, editor, terminal, FABs) ═══ */
+
+.m-ide-wrap { display: flex; flex-direction: column; height: 100% }
+
+.m-ide-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+  padding: var(--s-10) var(--s-16);
+  background: var(--s);
+  border-bottom: 1px solid var(--hm);
+}
+
+.m-ide-back {
+  font-size: var(--text-17-5);
+  color: var(--foam);
+  cursor: pointer;
+  padding: var(--s-6) var(--s-10);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--hm);
+  background: var(--o);
+  font-family: var(--f);
+  font-weight: 500;
+}
+
+.m-ide-back:active { background: var(--hm) }
+
+.m-ide-filename {
+  font-size: var(--text-13-75);
+  color: var(--mu);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.m-ide-body { flex: 1; overflow: hidden; display: flex; flex-direction: column }
+
+/* Tree view */
+.m-ide-tree { flex: 1; overflow-y: auto; padding: var(--s-8) 0 }
+
+.m-ide-tree-item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+  padding: var(--s-12) var(--s-16);
+  font-size: var(--text-15);
+  color: var(--mu);
+  border-bottom: 1px solid rgba(64,61,82,.3);
+  transition: background .1s;
+}
+
+.m-ide-tree-item:active { background: var(--o) }
+.m-ide-tree-item.focused { background: var(--o) }
+.m-ide-tree-item.dir { color: var(--foam) }
+.m-ide-tree-icon { font-size: var(--text-12-5); min-width: var(--s-16); text-align: center }
+.m-ide-tree-label { flex: 1 }
+
+/* Editor */
+.m-ide-editor { flex: 1; overflow-y: auto; display: flex; flex-direction: column }
+.m-ide-content { flex: 1; padding: var(--s-16); overflow-y: auto; font-size: var(--text-15); line-height: 1.6 }
+
+/* Terminal */
+.m-ide-terminal {
+  padding: var(--s-12) var(--s-16);
+  background: var(--o);
+  border-top: 1px solid var(--hm);
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.m-ide-term-line { margin-bottom: var(--s-8) }
+.m-ide-term-cmd { font-size: var(--text-12-5); color: var(--foam) }
+.m-ide-term-out { font-size: var(--text-12-5); color: var(--mu); margin-top: var(--s-2); white-space: pre-wrap; font-family: var(--f) }
+
+/* FABs */
+.m-ide-fab-row {
+  position: fixed;
+  bottom: var(--s-100);
+  right: var(--s-16);
+  display: flex;
+  gap: var(--s-8);
+  z-index: 50;
+}
+
+.m-ide-fab {
+  width: var(--m-ide-fab);
+  height: var(--m-ide-fab);
+  border-radius: var(--radius-full);
+  background: var(--s);
+  border: 1px solid var(--hm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-17-5);
+  color: var(--foam);
+  cursor: pointer;
+  box-shadow: 0 var(--s-2) var(--s-8) rgba(0,0,0,.3);
+}
+
+.m-ide-fab:active { background: var(--o) }

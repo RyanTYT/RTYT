@@ -1,0 +1,202 @@
+:root{
+  /* ╔══════════════════════════════════════════════════════════════════╗
+     ║  DESIGN TOKEN SYSTEM — Two-Tier Architecture                    ║
+     ║                                                                 ║
+     ║  Base unit: 0.05rem = 1px at 20px root (desktop)                ║
+     ║  Tier 1 (Primitives): --s-{N} where N = desktop px value        ║
+     ║         e.g. --s-10 = 0.5rem = 10px desktop / 8px mobile        ║
+     ║  Tier 2 (Semantic): --{component}-{property}                    ║
+     ║         e.g. --hm-cell-w = var(--s-62)                          ║
+     ╚══════════════════════════════════════════════════════════════════╝ */
+
+  /* ═══ COLORS (Rose Pine) ═══ */
+  --b:#191724;--s:#1f1d2e;--o:#26233a;--hm:#403d52;--hl:#524f67;--hh:#6e6a86;--mu:#908caa;--su:#e0def4;--t:#e0def4;--love:#eb6f92;--gold:#f6c177;--rose:#ebbcba;--pine:#31748f;--foam:#9ccfd8;--iris:#c4a7e7;--f:'JetBrains Mono',ui-monospace,monospace;
+
+  /* ═══════════════════════════════════════════════════════════════════
+     TIER 1 — PRIMITIVE SPACING / SIZING SCALE
+     Named by desktop-pixel value: --s-{px} = {px ÷ 20}rem
+     ═══════════════════════════════════════════════════════════════════ */
+
+  /* ── Core scale (high frequency, whole-px steps) ────────────────── */
+  --s-1: 0.05rem;         /*   1px */
+  --s-2: 0.1rem;          /*   2px */
+  --s-3: 0.15rem;         /*   3px */
+  --s-4: 0.2rem;          /*   4px */
+  --s-5: 0.25rem;         /*   5px */
+  --s-6: 0.3rem;          /*   6px */
+  --s-7: 0.35rem;         /*   7px */
+  --s-8: 0.4rem;          /*   8px */
+  --s-10: 0.5rem;         /*  10px */
+  --s-12: 0.6rem;         /*  12px */
+  --s-14: 0.7rem;         /*  14px */
+  --s-15: 0.75rem;        /*  15px */
+  --s-16: 0.8rem;         /*  16px */
+  --s-18: 0.9rem;         /*  18px */
+  --s-20: 1rem;           /*  20px */
+  --s-22: 1.1rem;         /*  22px */
+  --s-24: 1.2rem;         /*  24px */
+  --s-25: 1.25rem;        /*  25px */
+  --s-28: 1.4rem;         /*  28px */
+  --s-30: 1.5rem;         /*  30px */
+  --s-32: 1.6rem;         /*  32px */
+  --s-35: 1.75rem;        /*  35px */
+  --s-36: 1.8rem;         /*  36px */
+  --s-40: 2rem;           /*  40px */
+  --s-44: 2.2rem;         /*  44px */
+  --s-48: 2.4rem;         /*  48px */
+  --s-50: 2.5rem;         /*  50px */
+  --s-52: 2.6rem;         /*  52px */
+  --s-60: 3rem;           /*  60px */
+  --s-62: 3.1rem;         /*  62px */
+  --s-70: 3.5rem;         /*  70px */
+  --s-72: 3.6rem;         /*  72px */
+  --s-75: 3.75rem;        /*  75px */
+  --s-80: 4rem;           /*  80px */
+  --s-90: 4.5rem;         /*  90px */
+  --s-95: 4.75rem;        /*  95px */
+  --s-100: 5rem;          /* 100px */
+
+  /* ┄┄ Granular spacing (fractional px, ≤5 usages each) ┄┄┄┄┄┄┄┄┄┄ */
+  --s-2-5: 0.125rem;      /*  2.5px */
+  --s-3-75: 0.1875rem;    /*  3.75px */
+  --s-6-25: 0.3125rem;    /*  6.25px */
+  --s-7-5: 0.375rem;      /*  7.5px */
+  --s-8-75: 0.4375rem;    /*  8.75px */
+  --s-12-5: 0.625rem;     /* 12.5px */
+  --s-17-5: 0.875rem;     /* 17.5px */
+  --s-22-5: 1.125rem;     /* 22.5px */
+  --s-27-5: 1.375rem;     /* 27.5px */
+  --s-32-5: 1.625rem;     /* 32.5px */
+  --s-37-5: 1.875rem;     /* 37.5px */
+  --s-45: 2.25rem;        /* 45px */
+  --s-87-5: 4.375rem;     /* 87.5px */
+
+  /* ═══════════════════════════════════════════════════════════════════
+     TIER 1 — FONT SIZE SCALE
+     ═══════════════════════════════════════════════════════════════════ */
+
+  /* ── Core type scale (used ≥5× across components) ────────────────── */
+  --text-3xs: 0.425rem;   /*  8.5px */
+  --text-2xs: 0.45rem;    /*  9px */
+  --text-xs: 0.5rem;      /* 10px */
+  --text-sm: 0.55rem;     /* 11px */
+  --text-md: 0.6rem;      /* 12px */
+  --text-base: 0.65rem;   /* 13px */
+  --text-lg: 0.7rem;      /* 14px */
+  --text-xl: 0.8rem;      /* 16px */
+  --text-2xl: 1rem;       /* 20px */
+  --text-3xl: 1.25rem;    /* 25px */
+  --text-4xl: 1.875rem;   /* 37.5px */
+  --text-5xl: 2.375rem;   /* 47.5px */
+
+  /* ┄┄ Granular type sizes (between core steps) ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄ */
+  --text-10-5: 0.525rem;  /* 10.5px — hm-cell grade */
+  --text-11-25: 0.5625rem;/* 11.25px — mobile tags */
+  --text-12-5: 0.625rem;  /* 12.5px — proj-tag, tl-hint, sl-m, dots */
+  --text-13-1: 0.656rem;  /* 13.12px — cf-btn, md-badge */
+  --text-13-75: 0.6875rem;/* 13.75px — exp-meta, hm-panel, bpct, contact-label */
+  --text-14-4: 0.719rem;  /* 14.38px — cl-row, cr-row, proj-desc, tl-proj */
+  --text-15: 0.75rem;     /* 15px — ide-tab, links, boot-hero-sub, tl-title */
+  --text-15-6: 0.781rem;  /* 15.62px — md-p, md-ul li */
+  --text-16-25: 0.8125rem;/* 16.25px — sec-hdr, proj-title, boot font, cmd */
+  --text-17-5: 0.875rem;  /* 17.5px — l1-nav, logo, hero-sub, exp-title */
+  --text-18-75: 0.9375rem;/* 18.75px — md-h2 */
+  --text-21-25: 1.0625rem;/* 21.25px — tl-metric-val */
+  --text-25: 1.25rem;     /* 25px — md-h1, tl-sec-title, m-hamburger */
+  --text-27-5: 1.375rem;  /* 27.5px — ch-num */
+  --text-30: 1.5rem;      /* 30px — m-hero-name */
+
+  /* ═══════════════════════════════════════════════════════════════════
+     TIER 1 — BORDER RADIUS
+     ═══════════════════════════════════════════════════════════════════ */
+  --radius-xs: 0.1rem;    /* 2px */
+  --radius-sm: 0.15rem;   /* 3px */
+  --radius-md: 0.2rem;    /* 4px */
+  --radius-base: 0.25rem; /* 5px */
+  --radius-lg: 0.3rem;    /* 6px */
+  --radius-xl: 0.4rem;    /* 8px */
+  --radius-2xl: 0.5rem;   /* 10px */
+  --radius-3xl: 0.8rem;   /* 16px */
+  --radius-full: 50%;
+
+  /* ═══════════════════════════════════════════════════════════════════
+     TIER 2 — COMPONENT DIMENSIONS (semantic tokens)
+     Naming: --{component}-{property}
+     ═══════════════════════════════════════════════════════════════════ */
+
+  /* Landing layout */
+  --nav-pad-x: var(--s-50);           /* 50px */
+  --hero-pad-top: 8.125rem;           /* 162.5px */
+  --hero-max-w: 48.75rem;             /* 975px */
+  --section-max-w: 56.25rem;          /* 1125px */
+  --courses-max-w: 68.75rem;          /* 1375px */
+  --tooltip-w: 17.5rem;               /* 350px — journal hover */
+  --contact-max-w: 31.25rem;          /* 625px */
+
+  /* Heatmap */
+  --hm-cell-w: var(--s-72);           /* 72px */
+  --hm-cell-h: var(--s-60);           /* 60px */
+  --hm-label-col: var(--s-95);        /* 95px */
+  --hm-panel-min-h: 20rem;            /* 400px */
+  --hm-panel-max-h: 26.25rem;         /* 525px */
+  --hm-panel-h: 21.3rem;              /* ~426px — matches heatmap grid box height */
+  --hm-list-max-h: 22.5rem;           /* 450px */
+
+  /* Courses list */
+  --cl-code-col: var(--s-90);         /* 90px */
+  --cl-grade-col: var(--s-45);        /* 45px */
+  --cl-dot-col: var(--s-27-5);        /* 27.5px */
+
+  /* IDE */
+  --ide-tree-w: 10rem;                /* 200px */
+  --ide-gutter-w: var(--s-50);        /* 50px */
+  --ide-term-max-h: 9rem;             /* 180px */
+  --ide-cmd-preview-max-w: 15.625rem; /* 312.5px */
+
+  /* Boot */
+  --boot-progress-w: 12.5rem;         /* 250px */
+  --boot-time-col: 3.125rem;          /* 62.5px */
+  --boot-status-col: 3.4375rem;       /* 68.75px */
+
+  /* Timeline */
+  --tl-left-w: 16.25rem;              /* 325px */
+  --tl-graph-h: var(--s-75);          /* 75px */
+  --tl-dot-size: var(--s-25);         /* 25px */
+  --tl-dot-active-size: var(--s-32-5);/* 32.5px */
+  --tl-mid-w: var(--s-100);           /* 100px */
+  --tl-mods-min-w: 12.5rem;           /* 250px */
+
+  /* Mobile heatmap */
+  --m-hm-cell: 3rem;                  /* 60px desktop / 48px mobile */
+  --m-hm-cell-h: 2.75rem;             /* 55px */
+  --m-hm-corner: var(--s-75);         /* 75px */
+  --m-hm-max-w: 20.625rem;            /* 412.5px */
+
+  /* Mobile timeline */
+  --m-tl-fab: var(--s-60);            /* 60px */
+  --m-ide-fab: var(--s-50);           /* 50px */
+}
+*{margin:0;padding:0;box-sizing:border-box}html{font-size:20px;-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;text-size-adjust:100%}body{font-family:var(--f);background:var(--b);color:var(--su);overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--iris);color:var(--b)}
+
+/* ═══ Scrollbar ═══ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--hm) transparent;
+}
+*::-webkit-scrollbar { width: 6px; height: 6px }
+*::-webkit-scrollbar-track { background: transparent }
+*::-webkit-scrollbar-thumb {
+  background: var(--hm);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--hl) }
+*::-webkit-scrollbar-corner { background: transparent }
+
+.layer{display:none;min-height:100vh}.layer.active{display:block}
+#layer-ide.active,#layer-timeline.active{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+@keyframes blink{50%{opacity:0}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(var(--s-4))}to{opacity:1;transform:translateY(0)}}
+@keyframes rvSlide{from{max-height:0;opacity:0}to{max-height:10rem;opacity:1}}
+@media(max-width:768px){html{font-size:16px}}

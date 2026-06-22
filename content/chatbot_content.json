@@ -1,0 +1,30 @@
+{
+  "greeting": "Hey! 👋 I'm Ryan's portfolio assistant. How can I help?",
+  "options": [
+    { "id": "about", "label": "🧑‍💻 Quick rundown of who Ryan is" },
+    { "id": "contact", "label": "📬 Get contact info" },
+    { "id": "resume", "label": "📄 Get resume" },
+    { "id": "chatbot", "label": "🤖 Talk to a chatbot" },
+    { "id": "feedback", "label": "🪶 Leave me a note" }
+  ],
+  "responses": {
+    "about": "Ryan Tan — final-year NUS double degree student (BBA + BSc Business Analytics). He builds at the intersection of **quantitative finance** and **systems engineering**.\n\n• Built a live automated trading platform in **Rust/Tokio** on IBKR\n• Interned at **SAP Asia** building full-stack AI apps (6 months)\n• Specialises in Rust, Python, LLMs, and PostgreSQL\n\nExplore the terminal (press `) for the full interactive experience!",
+    "contact": "Oh, I guess you had trouble scrolling to the bottom of the page.\n\n Here's how to reach me:\n\n📧 **Email:** {{email}}\n🐙 **GitHub:** {{github}}\n📱 **Phone:** {{phone}}\n\nStatus: *{{status}}*",
+    "resume": "Here's the resume:\n\n📄 [{{resume_url_short}}]({{resume_url}})\n\nClick the link above to view/download!",
+    "chatbot_first": [
+      "AHHAHAHA, that was funny!",
+      "You really thought that was gonna work?? I'm not paying for an actual LLM service to run this!! 😭💸",
+      "Though I *have* had experience building the UI frontend for a chatbot wrapper during my internship at SAP, and have also worked extensively with LLM tools — MCP tool calls, crafting LLM skills, building robust knowledge bases, and prompting significantly to build codebases quick and with quality. This entire portfolio was built with Claude as a pair programmer!"
+    ],
+    "chatbot_repeat": [
+        "Oh, you actually pressed this option again. Ermmm... this still doesn't actually exist. 🫠",
+        "But hey, maybe one day when OpenAI gives me free credits..."
+    ],
+    "chatbot_repeat_2": [
+        "Huh, you pressed this option yet again.",
+        "you seem QUITE bored.",
+        "Maybe you can find some entertainment trying to find an easter egg on this site..."
+    ],
+    "feedback": "➔ opening google form\n\nleave whatever feedback here!\nor just drop me a note if you want! ❤️"
+  }
+}

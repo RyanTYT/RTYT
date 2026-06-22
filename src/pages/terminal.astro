@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import TerminalApp from '../components/TerminalApp';
+
+// Load courses CSV at build time
+import coursesRaw from '../../content/courses.csv?raw';
+
+// Load contact data
+import contactData from '../../content/contact.json';
+const contactRaw = JSON.stringify(contactData);
+
+// Load Personal Info
+import personalInfo from '../../content/personal_info.json';
+import type { PersonalInfoStruct } from '../lib/content';
+const personalInfoData = personalInfo as PersonalInfoStruct;
+
+// Load all content markdown files at build time
+const experienceFiles = import.meta.glob('../../content/experience/*.md', { query: '?raw', import: 'default' });
+const projectFiles = import.meta.glob('../../content/projects/*.md', { query: '?raw', import: 'default' });
+const journalFiles = import.meta.glob('../../content/journal/*.md', { query: '?raw', import: 'default' });
+
+// Resolve all globs to raw strings
+const experienceRaw: string[] = await Promise.all(
+  Object.values(experienceFiles).map(async (loader) => (await loader()) as string)
+);
+const projectsRaw: string[] = await Promise.all(
+  Object.values(projectFiles).map(async (loader) => (await loader()) as string)
+);
+const journalRaw: string[] = await Promise.all(
+  Object.values(journalFiles).map(async (loader) => (await loader()) as string)
+);
+---
+
+<Base title="ryan@portfolio — terminal">
+  <TerminalApp
+    client:only="react"
+    coursesRaw={coursesRaw}
+    contactRaw={contactRaw}
+    experienceRaw={experienceRaw}
+    projectsRaw={projectsRaw}
+    journalRaw={journalRaw}
+    personalInfo={personalInfoData}
+  />
+</Base>

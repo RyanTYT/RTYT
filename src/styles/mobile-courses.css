@@ -1,0 +1,237 @@
+/* ═══ MOBILE: Courses heatmap + bottom sheets ═══ */
+
+.m-hm-wrap {
+  width: 100%;
+  max-width: var(--m-hm-max-w);
+  margin: 0 auto;
+  padding: var(--s-12) 0;
+}
+
+.m-hm-grid { display: grid; gap: var(--s-2); width: fit-content; margin: 0 auto }
+.m-hm-corner { width: var(--m-hm-corner) }
+
+.m-hm-col-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  width: var(--m-hm-cell);
+  height: var(--s-30);
+}
+
+.m-hm-row-hdr {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--mu);
+  padding-left: var(--s-4);
+  width: var(--m-hm-corner);
+  height: var(--m-hm-cell-h);
+}
+
+.m-hm-cell {
+  width: var(--m-hm-cell);
+  height: var(--m-hm-cell-h);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative;
+}
+
+.m-hm-cell:active { transform: scale(0.92) }
+.m-hm-empty { background: rgba(110,106,134,.06); cursor: default }
+
+/* Grade backgrounds */
+.m-hm-cell.g-ap { background: rgba(196,167,231,.35) }
+.m-hm-cell.g-a { background: rgba(156,207,216,.28) }
+.m-hm-cell.g-am { background: rgba(156,207,216,.2) }
+.m-hm-cell.g-bp { background: rgba(246,193,119,.25) }
+.m-hm-cell.g-b { background: rgba(246,193,119,.18) }
+.m-hm-cell.g-s { background: rgba(144,140,170,.15) }
+
+.m-hm-grade { font-size: var(--text-xs); font-weight: 600; color: var(--su); opacity: 0.9 }
+.m-hm-multi { position: relative }
+
+.m-hm-badge {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--su);
+  background: rgba(0,0,0,.3);
+  border-radius: var(--radius-full);
+  width: var(--s-25);
+  height: var(--s-25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Legend */
+.m-hm-legend { display: flex; justify-content: center; gap: var(--s-12); margin-top: var(--s-12); font-size: var(--text-xs); color: var(--mu) }
+.m-hm-leg { display: flex; align-items: center; gap: var(--s-4) }
+.m-hm-sw { width: var(--s-12-5); height: var(--s-12-5); border-radius: var(--radius-sm) }
+.m-hm-sw.g-ap { background: rgba(196,167,231,.4) }
+.m-hm-sw.g-a { background: rgba(156,207,216,.3) }
+.m-hm-sw.g-bp { background: rgba(246,193,119,.3) }
+.m-hm-sw.g-s { background: rgba(144,140,170,.2) }
+
+/* ═══ Heatmap bottom sheet ═══ */
+
+.m-hm-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 998;
+}
+
+.m-hm-sheet-overlay.visible { opacity: 1; pointer-events: auto }
+
+.m-hm-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 70vh;
+  background: var(--s);
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.32,.72,0,1);
+  z-index: 999;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.m-hm-sheet.open { transform: translateY(0) }
+
+.m-hm-sheet-handle {
+  display: flex;
+  justify-content: center;
+  padding: var(--s-12) 0 var(--s-8);
+  position: sticky;
+  top: 0;
+  background: var(--s);
+  z-index: 1;
+}
+
+.m-hm-sheet-bar { width: var(--s-45); height: var(--s-4); border-radius: var(--radius-xs); background: var(--hl) }
+.m-hm-sheet-content { padding: 0 var(--s-16) var(--s-24) }
+
+.m-hm-sheet-header {
+  display: flex;
+  align-items: center;
+  gap: var(--s-8);
+  margin-bottom: var(--s-16);
+  padding-bottom: var(--s-12);
+  border-bottom: 1px solid rgba(110,106,134,.2);
+}
+
+.m-hm-sheet-sem { font-size: var(--text-lg); font-weight: 600; color: var(--su) }
+.m-hm-sheet-cat { font-size: var(--text-md); color: var(--mu); padding: var(--s-2) var(--s-8); background: rgba(110,106,134,.15); border-radius: var(--radius-md) }
+.m-hm-sheet-count { font-size: var(--text-sm); color: var(--hh); margin-left: auto }
+.m-hm-sheet-modules { display: flex; flex-direction: column; gap: var(--s-8) }
+
+.m-hm-sheet-mod {
+  padding: var(--s-12);
+  border-radius: var(--radius-2xl);
+  background: rgba(110,106,134,.08);
+  cursor: pointer;
+  transition: background .15s ease;
+}
+
+.m-hm-sheet-mod:active { background: rgba(110,106,134,.15) }
+.m-hm-sheet-mod-hdr { display: flex; align-items: center; justify-content: space-between; gap: var(--s-8) }
+.m-hm-sheet-mod-info { display: flex; flex-direction: column; gap: var(--s-2); min-width: 0 }
+.m-hm-sheet-mod-code { font-size: var(--text-base); font-weight: 600; color: var(--su); font-family: var(--f) }
+.m-hm-sheet-mod-title { font-size: var(--text-sm); color: var(--mu); white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+
+.m-hm-sheet-mod-grade {
+  font-size: var(--text-base);
+  font-weight: 700;
+  padding: var(--s-2) var(--s-8);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.m-hm-sheet-mod-grade.grade-ap { color: var(--iris); background: rgba(196,167,231,.15) }
+.m-hm-sheet-mod-grade.grade-a { color: var(--foam); background: rgba(156,207,216,.15) }
+.m-hm-sheet-mod-grade.grade-bp { color: var(--gold); background: rgba(246,193,119,.15) }
+.m-hm-sheet-mod-grade.grade-b { color: var(--gold); background: rgba(246,193,119,.1) }
+.m-hm-sheet-mod-grade.grade-s { color: var(--mu); background: rgba(144,140,170,.15) }
+
+.m-hm-sheet-mod-review {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: var(--text-md);
+  color: var(--rose);
+  line-height: 1.5;
+  margin-top: 0;
+  transition: max-height .25s ease, opacity .2s ease, margin-top .2s ease;
+}
+
+.m-hm-sheet-mod-review.visible { max-height: 7.5rem; opacity: 1; margin-top: var(--s-10) }
+
+/* ═══ Generic bottom sheet (shared) ═══ */
+
+.m-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.m-sheet-overlay.open { opacity: 1; pointer-events: auto }
+
+.m-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--s);
+  border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
+  padding: var(--s-16) var(--s-20) var(--s-32);
+  z-index: 1001;
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.25,.46,.45,.94);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.m-sheet.open { transform: translateY(0) }
+.m-sheet-handle { width: var(--s-50); height: var(--s-4); background: var(--hm); border-radius: var(--radius-xs); margin: 0 auto var(--s-16) }
+.m-sheet-title { font-size: var(--text-15); color: var(--mu); margin-bottom: var(--s-12) }
+
+.m-sheet-mod {
+  padding: var(--s-10) var(--s-12);
+  background: var(--o);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--s-8);
+  border: 1px solid var(--hm);
+}
+
+.m-sheet-mod-code { font-size: var(--text-15); color: var(--foam); font-weight: 500 }
+.m-sheet-mod-title { font-size: var(--text-13-75); color: var(--t); margin-top: var(--s-2) }
+.m-sheet-mod-grade { font-size: var(--text-16-25); font-weight: 600; float: right }
+
+.m-sheet-review {
+  font-size: var(--text-13-75);
+  color: var(--mu);
+  line-height: 1.6;
+  margin-top: var(--s-8);
+  padding: var(--s-8);
+  border-left: var(--s-2) solid var(--iris);
+  background: rgba(196,167,231,.04);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}

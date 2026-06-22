@@ -1,0 +1,153 @@
+/* ═══ LAYER 3: IDE (shell, tree, tabs, gutter, terminal, statusline) ═══ */
+
+#layer-ide { background: var(--b) }
+.ide-wrap { display: flex; flex-direction: column; height: 100%; flex: 1 }
+
+/* Top bar + tabs */
+.ide-top {
+  display: flex;
+  align-items: center;
+  padding: var(--s-7-5) var(--s-17-5);
+  background: var(--s);
+  border-bottom: 1px solid var(--hm);
+  gap: var(--s-15);
+}
+
+.ide-tab { font-size: var(--text-15); color: var(--mu); padding: var(--s-5) var(--s-12-5); border-radius: var(--radius-md) }
+.ide-tab.ina { opacity: .5 }
+
+/* Body layout */
+.ide-body { display: flex; flex: 1; overflow: hidden }
+
+/* Tree panel */
+.ide-tree {
+  width: var(--ide-tree-w);
+  background: var(--s);
+  border-right: 1px solid var(--hm);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.tree-hdr {
+  font-size: var(--text-13-75);
+  color: var(--mu);
+  padding: var(--s-12-5) var(--s-17-5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--hm);
+}
+
+.tree-body { padding: var(--s-7-5) 0; overflow-y: auto; flex: 1 }
+
+.ti {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  padding: var(--s-3-75) var(--s-17-5);
+  font-size: var(--text-15);
+  color: var(--mu);
+  cursor: pointer;
+  transition: background .1s;
+  border-left: var(--s-2) solid transparent;
+}
+
+.ti:hover { background: var(--o) }
+.ti.sel { color: var(--su); background: var(--o) }
+.ti.foc { border-left-color: var(--iris); background: rgba(196,167,231,.05) }
+.ti.i1 { padding-left: var(--s-35) }
+
+/* Main: editor + terminal split */
+.ide-main { flex: 1; display: flex; flex-direction: column; overflow: hidden }
+.ide-editor { display: flex; flex: 1; overflow: hidden }
+
+/* Gutter */
+.ide-gut {
+  width: var(--ide-gutter-w);
+  background: var(--b);
+  border-right: 1px solid var(--hl);
+  padding: var(--s-15) var(--s-10) var(--s-15) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ide-gut span { font-size: var(--text-15); color: var(--hh); line-height: 1.6 }
+.ide-gut span.cur { color: var(--su) }
+
+/* Content area */
+.ide-cnt { flex: 1; padding: var(--s-15) var(--s-30); overflow-y: auto; outline: none }
+
+/* Terminal */
+.ide-term {
+  border-top: 1px solid var(--hm);
+  background: var(--o);
+  max-height: var(--ide-term-max-h);
+  overflow-y: auto;
+  display: none;
+  padding: var(--s-10) var(--s-17-5);
+  font-size: var(--text-15);
+  transition: opacity .5s;
+}
+
+.ide-term.open { display: block }
+.ide-term.fading { opacity: 0 }
+.ide-term .term-line { padding: var(--s-3-75) 0; line-height: 1.5; white-space: pre-wrap }
+.ide-term .term-cmd { color: var(--foam); margin-bottom: var(--s-2-5); font-size: var(--text-13-75) }
+.ide-term .term-out { color: var(--t) }
+
+/* ═══ Status line + Command line ═══ */
+
+.ide-sl {
+  display: flex;
+  align-items: center;
+  padding: var(--s-5) var(--s-17-5);
+  background: var(--s);
+  border-top: 1px solid var(--hm);
+  font-size: var(--text-13-75);
+  gap: var(--s-15);
+}
+
+.sl-m {
+  padding: var(--s-2-5) var(--s-10);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--text-12-5);
+  background: var(--pine);
+  color: var(--su);
+}
+
+.sl-m.ins { background: var(--gold); color: var(--b) }
+.sl-m.cmd { background: var(--iris); color: var(--b) }
+.sl-br { color: var(--mu) }
+.sl-f { color: var(--foam); flex: 1 }
+.sl-r { color: var(--mu) }
+
+.ide-cl {
+  display: flex;
+  align-items: center;
+  padding: var(--s-6-25) var(--s-17-5);
+  background: var(--b);
+  border-top: 1px solid var(--hm);
+  gap: var(--s-7-5);
+}
+
+.cmd-pre { font-size: var(--text-16-25); color: var(--iris); min-width: var(--s-12-5) }
+.cmd-in { flex: 1; background: transparent; border: none; color: var(--su); font-family: var(--f); font-size: var(--text-16-25); outline: none }
+.cmd-h { font-size: var(--text-12-5); color: var(--hh); margin-left: auto }
+
+.cmd-preview {
+  font-size: var(--text-13-75);
+  color: var(--gold);
+  margin-left: auto;
+  padding: var(--s-2-5) var(--s-10);
+  border-radius: var(--radius-sm);
+  background: rgba(246,193,119,.08);
+  max-width: var(--ide-cmd-preview-max-w);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: opacity .2s;
+}

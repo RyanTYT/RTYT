@@ -1,0 +1,252 @@
+/* ═══ EDITOR CONTENT: Markdown rendering + course rows ═══ */
+
+/* Pane active indicator */
+.ide-cnt.pane-active { box-shadow: inset var(--s-2) 0 0 var(--iris) }
+.ide-cnt .content-line { padding: var(--s-1) var(--s-5); border-radius: var(--radius-xs); transition: background .1s }
+.ide-cnt .content-line.line-focus { background: rgba(196,167,231,.08); outline: 1px solid rgba(196,167,231,.2) }
+
+/* ═══ Markdown — Headings ═══ */
+
+.md-h1 {
+  font-size: var(--text-25);
+  font-weight: 600;
+  color: var(--iris);
+  border-bottom: 1px solid var(--hm);
+  padding-bottom: var(--s-10);
+  margin-bottom: var(--s-20);
+}
+
+.md-h2 {
+  font-size: var(--text-18-75);
+  font-weight: 600;
+  color: var(--foam);
+  margin: var(--s-25) 0 var(--s-12-5);
+}
+
+.md-h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--pine);
+  margin: var(--s-20) 0 var(--s-10);
+}
+
+.md-h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin: var(--s-17-5) 0 var(--s-7-5);
+}
+
+/* ═══ Markdown — Body ═══ */
+
+.md-p {
+  font-size: var(--text-15-6);
+  color: var(--t);
+  line-height: 1.7;
+  margin-bottom: var(--s-12-5);
+}
+
+.md-code {
+  background: var(--o);
+  color: var(--gold);
+  padding: var(--s-2-5) var(--s-7-5);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-15);
+}
+
+/* ═══ Markdown — Code blocks ═══ */
+
+.md-pre {
+  background: var(--o);
+  border: 1px solid var(--hm);
+  border-radius: 6px;
+  padding: var(--s-15) var(--s-20);
+  margin: var(--s-12-5) 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.md-pre code {
+  font-size: var(--text-15);
+  color: var(--t);
+  line-height: 1.6;
+  display: block;
+  white-space: pre;
+}
+
+.md-pre-lang {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 10px;
+  color: var(--mu);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+  user-select: none;
+}
+
+/* Syntax highlighting (for static pages with manual spans) */
+.md-pre code .kw { color: var(--love) }
+.md-pre code .fn { color: var(--iris) }
+.md-pre code .st { color: var(--gold) }
+.md-pre code .cm { color: var(--mu); font-style: italic }
+.md-pre code .ty { color: var(--foam) }
+
+/* ═══ Markdown — Badges ═══ */
+
+.md-badge-row { display: flex; flex-wrap: wrap; gap: var(--s-7-5); margin-bottom: var(--s-17-5) }
+
+.md-badge {
+  font-size: var(--text-13-1);
+  padding: var(--s-2-5) var(--s-10);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.bd-r { background: #3a1a12; color: #f6c177 }
+.bd-p { background: #12203a; color: #9ccfd8 }
+.bd-pg { background: #0d2a1d; color: #9ccfd8 }
+.bd-i { background: #2a1a2a; color: #c4a7e7 }
+.bd-a { background: #2a2012; color: #f6c177 }
+.bd-j { background: #2a2a12; color: #f6c177 }
+
+/* ═══ Markdown — Lists ═══ */
+
+.md-ul { margin: var(--s-7-5) 0 var(--s-15); padding: 0; list-style: none }
+
+.md-ul li {
+  font-size: var(--text-15-6);
+  color: var(--t);
+  line-height: 1.7;
+  padding-left: var(--s-17-5);
+  position: relative;
+}
+
+.md-ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--pine);
+  font-size: var(--text-13-75);
+  top: var(--s-2-5);
+}
+
+.md-ol {
+  margin: var(--s-7-5) 0 var(--s-15);
+  padding: 0;
+  list-style: none;
+  counter-reset: md-counter;
+}
+.md-ol li {
+  font-size: var(--text-15-6);
+  color: var(--t);
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+  counter-increment: md-counter;
+  margin-bottom: 5px;
+}
+.md-ol li::before {
+  content: counter(md-counter) '.';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: var(--text-13-75);
+  font-weight: 600;
+}
+
+/* ═══ Markdown — Blockquote ═══ */
+
+.md-blockquote {
+  border-left: 3px solid var(--iris);
+  padding-left: var(--s-15);
+  margin: var(--s-12-5) 0;
+  color: var(--mu);
+  font-style: italic;
+  line-height: 1.7;
+}
+.md-blockquote p {
+  margin: 0 0 var(--s-5) 0;
+  font-size: var(--text-15-6);
+}
+
+/* ═══ Markdown — Table ═══ */
+
+.md-table { width: 100%; border-collapse: collapse; margin: var(--s-12-5) 0 var(--s-20); font-size: var(--text-15) }
+.md-table th { text-align: left; color: var(--mu); border-bottom: 1px solid var(--hm); padding: var(--s-7-5) var(--s-12-5); font-weight: 500 }
+.md-table td { color: var(--t); padding: var(--s-7-5) var(--s-12-5); border-bottom: 1px solid rgba(110,106,134,.1) }
+
+/* ═══ Markdown — Misc ═══ */
+
+.md-divider { border: none; border-top: 1px solid var(--hm); margin: var(--s-17-5) 0 }
+.md-link { color: var(--foam); text-decoration: none }
+.md-link:hover { text-decoration: underline }
+
+.md-img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: var(--s-12-5) 0;
+  border: 1px solid var(--hm);
+  display: block;
+}
+
+/* Inline formatting */
+.ide-cnt strong { color: var(--t); font-weight: 600 }
+.ide-cnt em { color: var(--mu); font-style: italic }
+.ide-cnt del { color: var(--mu); text-decoration: line-through }
+
+/* Non-focusable lines (hr) */
+.ide-cnt .content-line-skip.line-focus {
+  background: none;
+  outline: none;
+}
+
+/* ═══ RAW-ON-FOCUS: show markdown source on the active line ═══ */
+
+.ide-cnt .content-line.raw-focus {
+  background: rgba(196,167,231,.05);
+}
+
+.ide-cnt .content-line.raw-focus .raw-src {
+  font-family: var(--font-mono, 'JetBrains Mono', 'Fira Code', monospace);
+  font-size: var(--text-15);
+  color: var(--mu);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+/* ═══ Course rows (IDE pane) ═══ */
+
+.cr-row {
+  display: grid;
+  grid-template-columns: var(--s-87-5) 1fr var(--s-60) var(--s-17-5);
+  align-items: center;
+  column-gap: var(--s-5);
+  padding: var(--s-8-75) var(--s-15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .15s;
+  border: 1px solid transparent;
+  margin: var(--s-2-5) 0;
+}
+
+.cr-row:hover { background: var(--o) }
+.cr-row.cr-focus { background: var(--o); border-color: var(--iris) }
+.cr-row .cr-code { font-size: var(--text-14-4); color: var(--foam); font-weight: 500 }
+.cr-row .cr-title { font-size: var(--text-14-4); color: var(--t); overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.cr-row .cr-grade { font-size: var(--text-14-4); font-weight: 600; text-align: left }
+.cr-row .cr-rv { font-size: var(--text-xs); color: var(--iris); text-align: center; opacity: 0.7 }
+
+.review-box {
+  margin: var(--s-5) 0 var(--s-10) var(--s-15);
+  padding: var(--s-15) var(--s-20);
+  background: rgba(196,167,231,.05);
+  border-left: var(--s-3) solid var(--iris);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  font-size: var(--text-15);
+  color: var(--t);
+  line-height: 1.6;
+  animation: fadeIn .2s;
+}

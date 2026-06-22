@@ -1,0 +1,17 @@
+[
+    {
+        "title": "LLM Research Pipeline",
+        "description": "A 4-stage LLM research pipeline — idea generation to portfolio proposal — built on a persistent, web-search-grounded knowledge base with STALE/COMPRESS/KEEP triage, async recursive ticker deep-dives, and an adversarial counter-proposer that challenges every proposal before positions reach the order engine.",
+        "tags": ["Python", "LLM", "Anthropic", "Pydantic", "FastAPI", "Async", "Knowledge Base", "Multi-currency"]
+    },
+    {
+        "title": "Automated Trading System",
+        "description": "A live trading system written in Rust, interfacing directly with Interactive Brokers IB Gateway to run multiple concurrent strategies — complete with a custom proc-macro CRUD layer, a unified Order Management System with multi-currency FX chains, and a Tauri desktop/mobile dashboard.",
+        "tags": ["Rust", "tokio", "IBKR", "PostgreSQL", "sqlx", "Tauri", "TypeScript", "Proc Macros", "Algorithmic Trading", "Multi-currency"]
+    },
+    {
+        "title": "Orbital (CP2106)",
+        "description": "A full-stack timetable planner that lets NUS students generate constraint-satisfying class schedules across friend groups — powered by z3-solver on the backend, built from scratch in Y1 summer without component libraries or LLM help.",
+        "tags": ["Next.js", "TypeScript", "PostgreSQL", "z3-solver", "Node.js", "Full-Stack", "NUS Orbital"]
+    }
+]

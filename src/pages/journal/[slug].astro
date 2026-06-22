@@ -1,0 +1,69 @@
+---
+import Base from '../../layouts/Base.astro';
+
+export function getStaticPaths() {
+  const mdModules = import.meta.glob('../../../content/journal/*.md', { eager: true });
+  return Object.values(mdModules).map((mod: any) => ({
+    params: { slug: mod.frontmatter.slug },
+    props: { frontmatter: mod.frontmatter, Content: mod.Content },
+  }));
+}
+
+const { frontmatter, Content } = Astro.props;
+const { title, date, tags, filename } = frontmatter;
+---
+
+<style>
+  .journal-page-body :global(table) {
+    border-spacing: 15px 10px;
+  }
+
+  /* 1. Desktop & Large Screens: Centered Overflow Bleed */
+  @media (min-width: 950px) {
+    .journal-page-body :global(table) {
+      min-width: 100%;
+      max-width: none;  
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  /* 2. Mobile & Small Screens: Safe Horizontal Scrolling */
+  @media (max-width: 950px) {
+    .journal-page-body :global(table) {
+      display: block;
+      /* width: 100%; */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling for iOS */
+      
+      /* Optional: Prevents text inside cells from wrapping aggressively */
+      /* white-space: nowrap;  */
+    }
+  }
+</style>
+
+<Base title={`${title} — Ryan's Journal`}>
+  <div class="journal-page">
+    <nav class="journal-page-nav">
+      <a href={`${import.meta.env.BASE_URL}/`} class="journal-page-back">← back to home</a>
+    </nav>
+    <article class="journal-page-article">
+      <header class="journal-page-header">
+        <h1 class="journal-page-title">{title}</h1>
+        <div class="journal-page-meta">
+          <time class="journal-page-date">{date}</time>
+          <div class="journal-page-tags">
+            {tags.map((tag: string) => (
+              <span class="journal-page-tag">{tag}</span>
+            ))}
+          </div>
+        </div>
+        <div class="journal-page-filename">~/.journal/{filename}</div>
+      </header>
+      <div class="journal-page-body">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Base>
+

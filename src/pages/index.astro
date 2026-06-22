@@ -1,0 +1,66 @@
+---
+import Base from '../layouts/Base.astro';
+import LandingApp from '../components/LandingApp';
+
+// Load courses CSV at build time
+import coursesRaw from '../../content/courses.csv?raw';
+
+// Load contact data
+import contactData from '../../content/contact.json';
+const contactJson = JSON.stringify(contactData);
+
+// Load chatbot content
+import chatbotContent from '../../content/chatbot_content.json';
+const chatbotContentJson = JSON.stringify(chatbotContent);
+
+// Load Personal Info
+import personalInfo from '../../content/personal_info.json';
+import type { PersonalInfoStruct } from '../lib/content';
+const personalInfoJson = personalInfo as PersonalInfoStruct;
+
+// Load Experience and Projects
+import experienceJsonRaw from '../../content/short_experience.json';
+import projectsJsonRaw from '../../content/short_projects.json';
+import type { ShortExperience, ShortProject } from '../lib/content';
+const experienceJson = experienceJsonRaw as ShortExperience[];
+const projectsJson = projectsJsonRaw as ShortProject[];
+
+// Load journal entries at build time
+const journalFiles = import.meta.glob('../../content/journal/*.md', { query: '?raw', import: 'default', eager: true });
+const journalEntries = Object.entries(journalFiles).map(([path, raw]) => {
+  const content = raw as string;
+  const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if (!fmMatch) return null;
+  const fm = fmMatch[1];
+  const body = fmMatch[2].trim();
+  const get = (key: string) => {
+    const m = fm.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
+    return m ? m[1].replace(/^["']|["']$/g, '') : '';
+  };
+  const tagsMatch = fm.match(/^tags:\s*\[(.+)\]$/m);
+  const tags = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
+  return {
+    slug: get('slug'),
+    title: get('title'),
+    date: get('date'),
+    tags,
+    filename: get('filename'),
+    body,
+  };
+}).filter(Boolean);
+
+const journalJson = JSON.stringify(journalEntries);
+---
+
+<Base title="Ryan Tan — Coding Enthusiast · Builder · NUS">
+  <LandingApp
+    client:only="react"
+    coursesRaw={coursesRaw}
+    contactJson={contactJson}
+    personalInfoJson={personalInfoJson}
+    experienceJson={experienceJson}
+    projectsJson={projectsJson}
+    chatbotContentJson={chatbotContentJson}
+    journalEntriesJson={journalJson}
+  />
+</Base>

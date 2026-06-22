@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Binance — QA Engineer (Accelerator Programme)",
+        "caption": "Apr 2026 – Oct 2026 · 8 months · QA Team",
+        "description": "QA Engineer at Binance building LLM-augmented test infrastructure: a knowledge-base-backed agent that co-writes and remembers 300+ regression tests across Playwright and TestNG, an autonomous sprint reporting agent (Confluence → Google Sheets), and MCP-connected workflow automation for Jira and GitHub Enterprise."
+    },
+    {
+        "title": "SAP Asia — AI Developer Intern (ATAP)",
+        "caption": "Jun 2024 – Dec 2024 · 6 months · CPIT (HRIT) Team",
+        "description": "Frontend developer on HR GenAI and Skills Tagging apps. SAPUI5 + SAP CAP, oData v2/v4 integration, LLM-powered skill suggestions, custom bias-highlighting controls."
+    },
+    {
+        "title": "NUS FCH (4.68/4.78 GPA) — Bsc Business Analytics + BBA Double Degree",
+        "caption": "Aug 2022 - May 2026 · 50+ modules",
+        "description": "Financial Analytics, Machine Analytics Specialisation for Business Analytics. Finance Specialisation for BBA. 8x A+ in core modules, top in one module (Capital Markets Trading) and was a Teaching Assistant for Data Structures and Algorithms (CS2040) module."
+    }
+]

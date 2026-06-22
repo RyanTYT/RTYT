@@ -1,0 +1,112 @@
+/* ═══ LAYER 2: BOOT SEQUENCE ═══ */
+
+#layer-boot { background: #0a0a0f; padding: 0 var(--s-35); height: 100vh }
+#layer-boot.active { display: flex; flex-direction: column }
+
+/* Terminal chrome */
+.boot-bar-top { display: flex; align-items: center; padding: var(--s-15) 0; border-bottom: 1px solid #1a1a2e }
+.boot-bar-title { font-size: var(--text-lg); color: #444; margin-left: var(--s-8) }
+.dots { display: flex; gap: var(--s-7-5) }
+.dot { width: var(--s-12-5); height: var(--s-12-5); border-radius: var(--radius-full) }
+.dot-r { background: #f5554a }
+.dot-y { background: #f5c444 }
+.dot-g { background: #46d160 }
+
+/* Scroll area */
+#boot-scroll { flex: 1; overflow-y: auto; padding: var(--s-25) 0; font-size: var(--text-17-5) }
+
+.bln {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--s-12-5)));
+  transition: all .3s;
+  padding: var(--s-3-75) 0;
+  display: flex;
+  gap: var(--s-12-5);
+  align-items: baseline;
+}
+
+.bln.show { opacity: 1; transform: translateX(0) }
+.bt { color: #555; min-width: var(--boot-time-col) }
+.bs { min-width: var(--boot-status-col); font-weight: 600 }
+.bs.ok { color: #46d160 }
+.bs.warn { color: #f5c444 }
+.bm { color: #aaa }
+.bhi { color: #fff; font-weight: 500 }
+
+/* Hero (progress bar area) */
+.boot-hero { text-align: center; padding: var(--s-37-5) 0 }
+.bhn { font-size: var(--text-4xl); font-weight: 600; letter-spacing: var(--s-2); color: var(--su) }
+.bhs { font-size: var(--text-15); color: var(--mu); margin-top: var(--s-7-5) }
+.bbr { display: flex; align-items: center; justify-content: center; gap: var(--s-15); margin-top: var(--s-25) }
+.bbar { width: var(--boot-progress-w); height: var(--s-4); background: #1a1a2e; border-radius: var(--radius-xs); overflow: hidden }
+.bbf { height: 100%; background: var(--foam); transition: width .15s }
+.bpct { font-size: var(--text-13-75); color: var(--mu); min-width: var(--s-37-5) }
+.bready { font-size: var(--text-13-75); color: var(--foam); margin-top: var(--s-15); min-height: var(--s-17-5) }
+.bready-visible { opacity: 1 }
+.bready-hidden { opacity: 0 }
+
+/* ═══ VIM WARNING GATE ═══ */
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) }
+  25% { transform: translateX(calc(-1 * var(--s-6))) }
+  75% { transform: translateX(var(--s-6)) }
+}
+
+.vw-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--s-40);
+  text-align: center;
+  gap: var(--s-24);
+}
+
+.vw-title { font-size: var(--text-18-75); color: var(--gold); font-weight: 600 }
+.vw-body { font-size: var(--text-25); color: var(--t); max-width: 28rem; line-height: 1.7 }
+.vw-body strong { color: var(--foam) }
+.vw-hint { font-size: var(--text-16-25); color: var(--mu); margin-top: var(--s-8) }
+
+.vw-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  background: var(--o);
+  border: 1px solid var(--hm);
+  border-radius: var(--radius-lg);
+  padding: var(--s-10) var(--s-16);
+}
+
+.vw-input-wrap.shake { animation: shake 0.4s ease }
+.vw-colon { color: var(--foam); font-size: var(--text-lg); font-weight: 600 }
+
+.vw-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--t);
+  font-size: var(--text-lg);
+  font-family: var(--f);
+  width: var(--s-80);
+}
+
+.vw-back {
+  margin-top: var(--s-16);
+  font-size: var(--text-16-25);
+  color: var(--mu);
+  background: transparent;
+  border: 1px solid var(--hm);
+  border-radius: var(--radius-md);
+  padding: var(--s-8) var(--s-16);
+  cursor: pointer;
+  font-family: var(--f);
+  transition: all .15s;
+}
+
+.vw-back:hover { color: var(--foam); border-color: var(--foam) }
+
+@media (max-width: 768px) {
+  #boot-scroll { font-size: var(--text-15) }
+}

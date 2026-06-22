@@ -1,0 +1,31 @@
+{
+  "name": "Ryan Tan Yan Tong",
+  "short_description": "NUS BBA + BSc Business Analytics · Y4 · Graduated 2026",
+  "full_description": "NUS Double Degree (BSc Business Analytics + BBA) building anything I find <span class=\"md-code\">interesting</span> (recently some LLM knowledge bases and systems). Also an enthusiast of anything interestingly complex like Vim or Rust!",
+  "skills_tags": ["Rust", "Python", "Java", "C++", "PostgresSQL", "SQLite", "LLMs", "IBKR"],
+  "tech_stack": [
+      {
+          "layer": "Systems",
+          "tech": ["Rust", "Tokio", "Python", "Java", "C++", "LLM Prompts"],
+          "usage": "Knowledge Bases/LLM Skills, Trading Engine, Jobs Scraping Project, Course Projects, ..."
+      },
+      {
+          "layer": "Research",
+          "tech": ["Python", "pandas", "numpy"],
+          "usage": "Backtesting, Course Projects (- flight data, web mining Steam, ...), ..."
+      },
+      {
+          "layer": "Storage",
+          "tech": ["PostgresSQL", "SQLite", "Intersystems DB"],
+          "usage": "Market data, Healthhack (Intersystems RAG), HackNRoll, ..."
+      },
+      {
+          "layer": "AI",
+          "tech": ["Claude (Anthropic)", "Gemini", "OpenRouter"],
+          "usage": "Knowledge Bases, LLM Skills, LLM Plugins, MCP tools, ..."
+      }
+  ],
+  "status": "open to opportunities",
+  "resume_url": "https://ryantyt.github.io/RTYT/Ryan TYT Resume.pdf",
+  "google_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSdll4lqjGfhjHcFBFW2oaTPQ7Blg4wAuO1_kV9awaod9KX_Xw/viewform?usp=publish-editor"
+}
