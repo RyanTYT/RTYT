@@ -8,7 +8,7 @@
     { "id": "feedback", "label": "🪶 Leave me a note" }
   ],
   "responses": {
-    "about": "Ryan Tan — final-year NUS double degree student (BBA + BSc Business Analytics). He builds at the intersection of **quantitative finance** and **systems engineering**.\n\n• Built a live automated trading platform in **Rust/Tokio** on IBKR\n• Interned at **SAP Asia** building full-stack AI apps (6 months)\n• Specialises in Rust, Python, LLMs, and PostgreSQL\n\nExplore the terminal (press `) for the full interactive experience!",
+    "about": "NUS Double Degree (BSc Business Analytics + BBA) building anything I find <span class=\"md-code\">interesting</span> (recently some LLM knowledge bases and systems). Also an enthusiast of anything interestingly complex like Vim or Rust!",
     "contact": "Oh, I guess you had trouble scrolling to the bottom of the page.\n\n Here's how to reach me:\n\n📧 **Email:** {{email}}\n🐙 **GitHub:** {{github}}\n📱 **Phone:** {{phone}}\n\nStatus: *{{status}}*",
     "resume": "Here's the resume:\n\n📄 [{{resume_url_short}}]({{resume_url}})\n\nClick the link above to view/download!",
     "chatbot_first": [
