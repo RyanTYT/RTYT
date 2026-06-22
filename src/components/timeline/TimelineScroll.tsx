@@ -13,10 +13,10 @@ interface Props {
 }
 
 const SEM_LABELS: Record<string, string> = {
-  Y1S1: 'Aug–Dec 2021', Y1S2: 'Jan–May 2022',
-  Y2S1: 'Aug–Dec 2022', Y2S2: 'Jan–May 2023',
-  Y3S1: 'Aug–Dec 2023', Y3S2: 'Jan–May 2024',
-  Y4S1: 'Aug–Dec 2024', Y4S2: 'Jan–May 2025',
+  Y1S1: 'Aug–Dec 2022', Y1S2: 'Jan–May 2023',
+  Y2S1: 'Aug–Dec 2023', Y2S2: 'Jan–May 2024',
+  Y3S1: 'Aug–Dec 2024', Y3S2: 'Jan–May 2025',
+  Y4S1: 'Aug–Dec 2025', Y4S2: 'Jan–May 2026',
 };
 
 const SEM_HAPPINESS = [8, 7, 7, 5, 6, 6, 8, 9];
