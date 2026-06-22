@@ -6,28 +6,28 @@ interface Props {
 }
 
 /* ─── Semester data (same as desktop) ─── */
-const SEM_FULFILLMENT = [6, 7, 7, 8, 9, 7, 6, 9];
-const SEM_PROJECTS_SCORE = [2, 5, 6, 7, 9, 8, 5, 10];
+const SEM_FULFILLMENT = [8, 7, 7, 5, 6, 6, 8, 9];
+const SEM_PROJECTS_SCORE = [0, 1, 0, 1, 0, 2, 2, 3];
 const SEM_LABELS = ['Foundations', 'Discovery', 'Deep Dive', 'Specialisation', 'Peak Performance', 'Industry Ready', 'Final Push', 'Capstone'];
 const SEM_NARRATIVES = [
-  "First semester — adjusting to uni, discovering programming isn't just a hobby. Took CS2030 alongside business core. Already thinking about trading.",
-  'Found my rhythm. Accounting + Calculus + Legal. Started AutoTrader in Python. Orbital project. First taste of building something real.',
-  'Double degree kicks in. Finance, Econometrics, Data Viz. Realized quant finance is the intersection I want.',
-  'Investment Analysis was transformative — portfolio theory clicked. Computational Methods gave Monte Carlo skills.',
-  'Peak performance. Capital Market Trading Analytics + Fraud Analytics. Coursework directly feeds the live trading system.',
-  'SAP ATAP starts. Balancing internship + courses. LLM pipeline idea born during SAP work.',
-  'Full SAP internship + clearing CS requirements. ML, Networks, Computer Org. Absorbing systems knowledge.',
-  'Final semester. OS + Parallel Computing, Options & Futures + Financial Modelling. Rewriting everything in Rust.',
+  'Explored some basic Analytics + First Introduction to Vim and NeoVim',
+  'Orbital and Overloading',
+  'First B+ because I read the deadline wrong. Big LOLs.',
+  'Intermediary Semester for more interesting modules later on',
+  'Nerfed by ATAP Internship alongside taking courses - got Top Student for Analytics for Capital Market Trading',
+  'Stopped caring about grades almost completely',
+  "Explored more interesting fundamental CS courses that are unnecessary for my course but fundamental for Computing",
+  'Liked concurrency so overloaded to learn more about it',
 ];
 const SEM_PROJECT_ITEMS: Record<string, string[]> = {
-  Y1S1: ['Exploring Python for data analysis', 'First algo trading ideas (paper only)'],
-  Y1S2: ['AutoTrader v0.1 — Python backtesting', 'Orbital — full-stack web app'],
-  Y2S1: ['AutoTrader v0.5 — live paper trading', 'Reading: "Advances in Financial ML"'],
-  Y2S2: ['AutoTrader v1.0 — first live trades', 'Monte Carlo simulation projects'],
-  Y3S1: ['Trading bot managing real portfolio', 'Factor model implementation', 'Blog started'],
-  Y3S2: ['LLM research pipeline inception', 'SAP AI features shipped', 'Signal engineering'],
-  Y4S1: ['LLM pipeline v2 (multi-provider)', 'SAP ATAP completed', 'Tauri dashboard'],
-  Y4S2: ['Full Rust rewrite of trading platform', 'Multi-currency IBKR', 'This portfolio site'],
+  Y1S1: [],
+  Y1S2: ['Orbital — full-stack web app'],
+  Y2S1: [],
+  Y2S2: ['Portfolio Site v1'],
+  Y3S1: [''],
+  Y3S2: ['LoveBets', 'Healthhack'],
+  Y4S1: ['Trading Bot', 'Portfolio Site v2'],
+  Y4S2: ['Multi-currency IBKR', 'LLM Research Pipeline', 'Portfolio Site v3'],
 };
 
 /* ─── SVG Chart helper ─── */
