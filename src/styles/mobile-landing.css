@@ -228,3 +228,29 @@
 }
 
 .m-journal-hint.show { opacity: 1 }
+
+
+/* Toast */
+.m-toast {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--muted);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  z-index: 999;
+  white-space: nowrap;
+  pointer-events: none;
+
+  animation: toast-in 0.15s ease;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

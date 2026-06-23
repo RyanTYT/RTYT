@@ -28,6 +28,13 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
   const menuTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const journalRef = useRef<HTMLElement>(null);
 
+  // for journal section
+  const [tapCount, setTapCount] = useState(0);
+  const [toastMsg, setToastMsg] = useState<string | null>(null);
+  const tapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const TAPS_REQUIRED = 7;
+
   const toggleMenu = useCallback(() => {
     if (menuOpen) {
       // Close: remove open class, then unmount after animation
@@ -47,40 +54,36 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  const logoRef = useRef<HTMLDivElement>(null);
+  const handleLogоTap = useCallback(() => {
+    setTapCount(prev => {
+      const next = prev + 1;
+      const remaining = TAPS_REQUIRED - next;
 
-  // Replace the useCallback handlers with a ref-based approach
-  useEffect(() => {
-    const el = logoRef.current;
-    if (!el) return;
-  
-    const onStart = (e: TouchEvent) => {
-      e.preventDefault(); // Works because listener is non-passive
-      pressTimer.current = setTimeout(() => {
+      // Clear previous toast timer
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+
+      if (next >= TAPS_REQUIRED) {
+        setToastMsg('✦ journal unlocked');
         setJournalVisible(true);
-        setTimeout(() => {
-          journalRef.current?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }, 500);
-    };
-  
-    const onEnd = () => {
-      if (pressTimer.current) {
-        clearTimeout(pressTimer.current);
-        pressTimer.current = null;
+        setTimeout(() => journalRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+        toastTimer.current = setTimeout(() => setToastMsg(null), 2000);
+        // Reset tap counter after unlock
+        if (tapTimer.current) clearTimeout(tapTimer.current);
+        return 0;
       }
-    };
-  
-    // { passive: false } is the key — allows preventDefault to suppress selection
-    el.addEventListener('touchstart', onStart, { passive: false });
-    el.addEventListener('touchend', onEnd);
-    el.addEventListener('touchcancel', onEnd);
-  
-    return () => {
-      el.removeEventListener('touchstart', onStart);
-      el.removeEventListener('touchend', onEnd);
-      el.removeEventListener('touchcancel', onEnd);
-    };
+
+      // Only show toast from tap 2 onwards so first tap isn't noisy
+      if (next > 1) {
+        setToastMsg(`${remaining} more tap${remaining !== 1 ? 's' : ''} to unlock journal`);
+        toastTimer.current = setTimeout(() => setToastMsg(null), 1000);
+      }
+
+      // Reset counter if user stops tapping for 1.5s
+      if (tapTimer.current) clearTimeout(tapTimer.current);
+      tapTimer.current = setTimeout(() => setTapCount(0), 1500);
+
+      return next;
+    });
   }, []);
 
   // Hide journal when it scrolls out of view
@@ -106,14 +109,8 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
       {/* Mobile Nav */}
       <nav className="m-nav">
         <div
-          ref={logoRef}
           className="m-nav-logo"
-          style={{
-            userSelect: 'none',
-            WebkitUserSelect: 'none',
-            // Suppresses iOS magnifier + callout popup on long-press
-            WebkitTouchCallout: 'none' as React.CSSProperties['WebkitTouchCallout'],
-          }}
+          onClick={handleLogоTap}
         >
           ~/ryan
           <span className="m-dot-hint" />
@@ -234,7 +231,7 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
         </div>
       </section>
 
-      {/* Journal — hidden, revealed by long-press on logo */}
+      {/* Journal — hidden, revealed by multiple-presses on logo */}
       {journalVisible && (
         <section ref={journalRef} className="m-sec m-journal-section">
           <div className="m-sec-hdr">
@@ -258,6 +255,13 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
             ))}
           </div>
         </section>
+      )}
+
+      {/* toast for during revelation */}
+      {toastMsg && (
+        <div className="m-toast" key={toastMsg}>
+          {toastMsg}
+        </div>
       )}
     </>
   );
