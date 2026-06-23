@@ -7,7 +7,8 @@ export interface BootTask {
 
 export const BOOT_TASKS: BootTask[] = [
   { message: 'Loading <b>RyanOS</b> kernel v2025.1', min: 8, max: 15 },
-  { message: 'Initialising <b>memory</b> — 16GB allocated', min: 5, max: 12 },
+  { message: 'Initialising <b>memory</b> — 8GB allocated', min: 5, max: 12 },
+  { message: 'Detecting <b>GPU architecture</b> — No GPU, unfortunate :(', min: 5, max: 12 },
   { message: 'Mounting <b>/ryan</b> — identity loaded', min: 10, max: 20 },
   { message: 'Setting <b>locale</b> — en_SG.UTF-8', min: 3, max: 8 },
   { message: 'Starting <b>nvim</b> v0.10.2', min: 30, max: 60 },
@@ -22,7 +23,6 @@ export const BOOT_TASKS: BootTask[] = [
   { message: 'Plugin: <b>gitsigns.nvim</b> — git integration', min: 12, max: 25 },
   { message: 'Plugin: <b>which-key.nvim</b> — keybind hints', min: 10, max: 18 },
   { message: 'Loading <b>courses/</b> — 60 modules, 21 reviews', min: 20, max: 45 },
-  { message: 'Loading <b>.journal/</b> — 9 entries (hidden)', min: 8, max: 15 },
-  { message: 'Job market: <b>competitive</b> — stay sharp', min: 5, max: 10, warn: true },
+  { message: 'Loading <b>.journal/</b> — 9 entries', min: 8, max: 15 },
   { message: 'Hi there, <b>random stranger</b>!', min: 5, max: 10 },
 ];
