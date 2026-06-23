@@ -1,4 +1,4 @@
-# RTYT — Ryan Tan's Portfolio
+# Personal Website v3
 
 > A Neovim-inspired, three-layer portfolio site — built with Astro, React, and TypeScript — deployed at **[ryantyt.github.io/RTYT](https://ryantyt.github.io/RTYT/)**.
 
