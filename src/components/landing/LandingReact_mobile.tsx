@@ -47,22 +47,40 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  // Long press handlers for journal easter egg
-  const handlePressStart = useCallback(() => {
-    pressTimer.current = setTimeout(() => {
-      setJournalVisible(true);
-      // Scroll to journal after a tick
-      setTimeout(() => {
-        journalRef.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }, 500);
-  }, []);
+  const logoRef = useRef<HTMLDivElement>(null);
 
-  const handlePressEnd = useCallback(() => {
-    if (pressTimer.current) {
-      clearTimeout(pressTimer.current);
-      pressTimer.current = null;
-    }
+  // Replace the useCallback handlers with a ref-based approach
+  useEffect(() => {
+    const el = logoRef.current;
+    if (!el) return;
+  
+    const onStart = (e: TouchEvent) => {
+      e.preventDefault(); // Works because listener is non-passive
+      pressTimer.current = setTimeout(() => {
+        setJournalVisible(true);
+        setTimeout(() => {
+          journalRef.current?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }, 500);
+    };
+  
+    const onEnd = () => {
+      if (pressTimer.current) {
+        clearTimeout(pressTimer.current);
+        pressTimer.current = null;
+      }
+    };
+  
+    // { passive: false } is the key — allows preventDefault to suppress selection
+    el.addEventListener('touchstart', onStart, { passive: false });
+    el.addEventListener('touchend', onEnd);
+    el.addEventListener('touchcancel', onEnd);
+  
+    return () => {
+      el.removeEventListener('touchstart', onStart);
+      el.removeEventListener('touchend', onEnd);
+      el.removeEventListener('touchcancel', onEnd);
+    };
   }, []);
 
   // Hide journal when it scrolls out of view
@@ -87,15 +105,7 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
     <>
       {/* Mobile Nav */}
       <nav className="m-nav">
-        <div
-          className="m-nav-logo"
-          onTouchStart={handlePressStart}
-          onTouchEnd={handlePressEnd}
-          onTouchCancel={handlePressEnd}
-          onMouseDown={handlePressStart}
-          onMouseUp={handlePressEnd}
-          onMouseLeave={handlePressEnd}
-        >
+        <div className="m-nav-logo">
           ~/ryan
           <span className="m-dot-hint" />
         </div>
