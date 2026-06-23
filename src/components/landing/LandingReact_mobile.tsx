@@ -105,7 +105,16 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
     <>
       {/* Mobile Nav */}
       <nav className="m-nav">
-        <div className="m-nav-logo">
+        <div
+          ref={logoRef}
+          className="m-nav-logo"
+          style={{
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            // Suppresses iOS magnifier + callout popup on long-press
+            WebkitTouchCallout: 'none' as React.CSSProperties['WebkitTouchCallout'],
+          }}
+        >
           ~/ryan
           <span className="m-dot-hint" />
         </div>
