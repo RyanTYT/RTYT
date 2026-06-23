@@ -237,7 +237,7 @@ export const IDE: React.FC<IDEProps> = ({ coursesRaw, contactRaw, experienceRaw,
   const handleInsertSubmit = useCallback(
     (value: string) => {
       if (!value.trim()) return;
-      const result = executeCommand(value, showHidden, commandCtx);
+      const result = executeCommand(value, showHidden, commandCtx, personalInfo.google_form_url);
 
       if (result.action === 'clear') {
         clearLines();

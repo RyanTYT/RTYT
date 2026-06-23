@@ -164,7 +164,7 @@ export interface CommandContext {
   fileMap: Record<string, { id: string; label: string }>;
 }
 
-export function executeCommand(raw: string, showHidden: boolean, ctx: CommandContext): CommandResult {
+export function executeCommand(raw: string, showHidden: boolean, ctx: CommandContext, feedback_url: string): CommandResult {
   const trimmed = raw.trim();
   const lo = trimmed.toLowerCase();
   const parts = trimmed.split(/\s+/);
@@ -274,7 +274,7 @@ export function executeCommand(raw: string, showHidden: boolean, ctx: CommandCon
   }
 
   if (base === 'feedback') {
-      window.open('GOOGLE_FORM_URL', '_blank')
+      window.open(feedback_url, '_blank')
       return {
           output: `<span style="color:var(-foam)">➔ opening feedback form...</span>`
       }
