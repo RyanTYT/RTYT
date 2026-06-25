@@ -1,7 +1,7 @@
 {
-  "email": "ryan.tyt@u.nus.edu",
-  "github": "github.com/RyanTYT",
-  "phone": "+65 9643 3328",
+  "email": "<a href='mailto:ryan.tyt@u.nus.edu'>ryan.tyt@u.nus.edu</a>",
+  "github": "<a href='https://github.com/RyanTYT' target='_blank'>github.com/RyanTYT</a>",
+  "phone": "<a href='tel:+6596433328'>+65 9643 3328</a>",
   "status": "open to opportunities",
   "resume_url": "https://ryantyt.github.io/RTYT/Ryan TYT Resume.pdf"
 }

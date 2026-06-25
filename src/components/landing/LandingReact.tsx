@@ -160,15 +160,15 @@ export default function LandingReact({ coursesRaw, contactJson, personalInfoJson
         <div className="contact-grid">
           <div className="contact-item">
             <div className="ci-label">email</div>
-            <div className="ci-value">{contact.email}</div>
+            <div className="ci-value" dangerouslySetInnerHTML={{__html: contact.email}} />
           </div>
           <div className="contact-item">
             <div className="ci-label">github</div>
-            <div className="ci-value">{contact.github}</div>
+            <div className="ci-value" dangerouslySetInnerHTML={{__html: contact.github}} />
           </div>
           <div className="contact-item">
             <div className="ci-label">phone</div>
-            <div className="ci-value">{contact.phone}</div>
+            <div className="ci-value" dangerouslySetInnerHTML={{__html: contact.phone}} />
           </div>
           <div className="contact-item">
             <div className="ci-label">resume</div>
