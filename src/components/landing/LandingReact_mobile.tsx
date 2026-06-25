@@ -210,15 +210,15 @@ export default function LandingReact_mobile({ coursesRaw, contactJson, journalEn
         <div className="m-contact-grid">
           <div className="m-contact-item">
             <div className="m-ci-label">email</div>
-            <div className="m-ci-value">{contact.email}</div>
+            <div className="m-ci-value" dangerouslySetInnerHTML={{__html:contact.email}} />
           </div>
           <div className="m-contact-item">
             <div className="m-ci-label">github</div>
-            <div className="m-ci-value">{contact.github}</div>
+            <div className="m-ci-value" dangerouslySetInnerHTML={{__html: contact.github}} />
           </div>
           <div className="m-contact-item">
             <div className="m-ci-label">phone</div>
-            <div className="m-ci-value">{contact.phone}</div>
+            <div className="m-ci-value" dangerouslySetInnerHTML={{__html: contact.phone}} />
           </div>
           <div className="m-contact-item">
             <div className="m-ci-label">status</div>
